@@ -1,6 +1,7 @@
 package com.ecnudbcourse.acnhdb.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ecnudbcourse.acnhdb.dto.HouseWareMaterials;
 import com.ecnudbcourse.acnhdb.entity.HouseWare;
 import org.apache.ibatis.annotations.*;
 // 导入注解
@@ -28,4 +29,10 @@ public interface HouseWareMapper extends BaseMapper<HouseWare> {
 
     @Delete("DELETE FROM HouseWare WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
+
+    // join连接测试,选择对应houseware 的材料给我
+    @Select("selectMaterialsByName")
+    HouseWareMaterials selectMaterialsByName(@Param("name") String name);
+
+
 }

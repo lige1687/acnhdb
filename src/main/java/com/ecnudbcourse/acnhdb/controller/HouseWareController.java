@@ -1,6 +1,7 @@
 package com.ecnudbcourse.acnhdb.controller;
 
 
+import com.ecnudbcourse.acnhdb.dto.HouseWareMaterials;
 import com.ecnudbcourse.acnhdb.entity.HouseWare;
 
 import com.ecnudbcourse.acnhdb.service.HouseWareService;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/houseware")
+@RequestMapping("/api/houseware")
 public class HouseWareController {
 
     @Autowired
@@ -44,5 +45,10 @@ public class HouseWareController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         houseWareService.deleteById(id);
+    }
+
+    @GetMapping("/{name}")
+    public HouseWareMaterials getHousewareMaterialByName(@PathVariable String name) {
+        return houseWareService.getHousewareMaterialByName(name);
     }
 }
