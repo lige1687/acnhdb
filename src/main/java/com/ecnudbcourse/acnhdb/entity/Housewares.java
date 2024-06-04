@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-
-
 @Data
 @TableName("housewares")    // MyBatis Plus 注解，指定表名
 public class Housewares {

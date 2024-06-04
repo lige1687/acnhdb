@@ -1,12 +1,9 @@
 package com.ecnudbcourse.acnhdb.controller;
 
-
 import com.ecnudbcourse.acnhdb.entity.Housewares;
-
 import com.ecnudbcourse.acnhdb.service.HousewaresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -31,6 +28,7 @@ public class HousewaresController {
         return housewaresService.findByName(name);
     }
 
+    /*
     @PostMapping
     public void save(@RequestBody Housewares housewares) {
         housewaresService.insertHouseWare(housewares);
@@ -45,4 +43,5 @@ public class HousewaresController {
     public void delete(@PathVariable Long id) {
         housewaresService.deleteById(id);
     }
+     */
 }

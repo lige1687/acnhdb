@@ -1,13 +1,9 @@
 package com.ecnudbcourse.acnhdb.service;
 
-
-
-
 import com.ecnudbcourse.acnhdb.entity.Housewares;
 import com.ecnudbcourse.acnhdb.mapper.HousewaresMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

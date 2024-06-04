@@ -22,6 +22,10 @@ public class ToolsService {
         return toolsMapper.findByName(name);
     }
 
+    public Tools getById(Long id) {
+        return toolsMapper.selectById(id);
+    }
+
     public int insertTool(Tools tools) {
         return toolsMapper.insertTool(tools);
     }

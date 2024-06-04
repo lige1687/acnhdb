@@ -3,10 +3,7 @@ package com.ecnudbcourse.acnhdb.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ecnudbcourse.acnhdb.entity.Housewares;
 import org.apache.ibatis.annotations.*;
-// 导入注解
-
 import java.util.List;
-
 
 @Mapper
 //标记 是mapper , 即dao层的东西

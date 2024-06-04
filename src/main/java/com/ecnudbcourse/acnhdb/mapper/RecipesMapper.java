@@ -1,10 +1,8 @@
 package com.ecnudbcourse.acnhdb.mapper;
 
-
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ecnudbcourse.acnhdb.entity.Recipes;
 import org.apache.ibatis.annotations.*;
-
 import java.util.List;
 
 @Mapper

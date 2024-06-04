@@ -1,5 +1,6 @@
 package com.ecnudbcourse.acnhdb.service;
 
+import com.ecnudbcourse.acnhdb.entity.Housewares;
 import com.ecnudbcourse.acnhdb.entity.Recipes;
 import com.ecnudbcourse.acnhdb.mapper.RecipesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class RecipesService {
 
     public List<Recipes> getAll() {
         return recipesMapper.selectList(null);
+    }
+    public List<Recipes> findByName(String name) {
+        return recipesMapper.findByName(name);
     }
 
     public Recipes getById(Long id) {

@@ -1,11 +1,9 @@
 package com.ecnudbcourse.acnhdb.controller;
 
-
 import com.ecnudbcourse.acnhdb.entity.Recipes;
 import com.ecnudbcourse.acnhdb.service.RecipesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -25,6 +23,12 @@ public class RecipesController {
         return recipesService.getById(id);
     }
 
+    @GetMapping("/findByName")
+    public List<Recipes> findByName(@RequestParam String name) {
+        return recipesService.findByName(name);
+    }
+
+    /*
     @PostMapping
     public void save(@RequestBody Recipes recipes) {
         recipesService.save(recipes);
@@ -39,4 +43,5 @@ public class RecipesController {
     public void delete(@PathVariable Long id) {
         recipesService.delete(id);
     }
+     */
 }
