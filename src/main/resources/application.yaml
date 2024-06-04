@@ -1,10 +1,10 @@
 spring:
-
   application:
     name: acnhdb
-  profiles:
-    active: dev
-    # 启动的环境是 开发环境, 即lyb 环境
+  datasource:
+    url: jdbc:mysql://localhost:53306/acnh
+    username: test
+    password: StrongPassword123!
   jpa:
     hibernate:
       ddl-auto: update

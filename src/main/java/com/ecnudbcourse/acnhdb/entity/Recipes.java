@@ -14,18 +14,18 @@ public class Recipes {
     private Long id;
 
     private String name;
-    private Integer material1Count;
-    private String material1;
-    private Integer material2Count;
-    private String material2;
-    private Integer material3Count;
-    private String material3;
-    private Integer material4Count;
-    private String material4;
-    private Integer material5Count;
-    private String material5;
-    private Integer material6Count;
-    private String material6;
+    private Integer numberOfMaterial_1;
+    private String material_1;
+    private Integer numberOfMaterial_2;
+    private String material_2;
+    private Integer numberOfMaterial_3;
+    private String material_3;
+    private Integer numberOfMaterial_4;
+    private String material_4;
+    private Integer numberOfMaterial_5;
+    private String material_5;
+    private Integer numberOfMaterial_6;
+    private String material_6;
     private String recipesToUnlock;
     private String category;
 }
