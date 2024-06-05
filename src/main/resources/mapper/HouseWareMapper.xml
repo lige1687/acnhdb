@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ecnudbcourse.acnhdb.mapper.HousewaresMapper">
+    <!-- 具体的SQL语句定义 -->
+    <select id="selectHouseWareMaterialsByName" parameterType="String" resultType="com.ecnudbcourse.acnhdb.dto.HouseWareMaterials">
+        SELECT
+            COALESCE(r.Material1, '') AS Material1,
+            COALESCE(r.`#1`, '') AS `#1`,
+            COALESCE(r.Material2, '') AS Material2,
+            COALESCE(r.`#2`, '') AS `#2`,
+            COALESCE(r.Material3, '') AS Material3,
+            COALESCE(r.`#3`, '') AS `#3`,
+            COALESCE(r.Material4, '') AS Material4,
+            COALESCE(r.`#4`, '') AS `#4`,
+            COALESCE(r.Material5, '') AS Material5,
+            COALESCE(r.`#5`, '') AS `#5`,
+            COALESCE(r.Material6, '') AS Material6,
+            COALESCE(r.`#6`, '') AS `#6`
+        FROM
+            houseware h
+                JOIN
+            recipe r ON h.Name = r.Name
+        WHERE
+            h.Name = #{name}
+          AND h.DIY = 'yes'
+    </select>
+</mapper>
