@@ -1,5 +1,6 @@
 package com.ecnudbcourse.acnhdb.service;
 
+import com.ecnudbcourse.acnhdb.dto.HouseWareMaterials;
 import com.ecnudbcourse.acnhdb.entity.Housewares;
 import com.ecnudbcourse.acnhdb.mapper.HousewaresMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,8 @@ public class HousewaresService {
 
     public Housewares getById(Long id) {
         return housewaresMapper.selectById(id);
+    }
+    public HouseWareMaterials getHouseWareMaterialsByName(String name) {
+        return housewaresMapper.selectHouseWareMaterialsByName(name);
     }
 }
