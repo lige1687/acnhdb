@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface VillagersMapper extends BaseMapper<Villagers> {
 
-    @Select("SELECT * FROM villagers WHERE name = #{name}")
+    @Select("SELECT * FROM villagers WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Villagers> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO villagers (Name, Species, Gender, Personality, Hobby, Birthday, Catchphrase, Favorite_Song, Style_1, Style_2, Color_1, Color_2, Wallpaper, Flooring) VALUES (#{name}, #{species}, #{gender}, #{personality}, #{hobby}, #{birthday}, #{catchphrase}, #{favoriteSong}, #{style_1}, #{style_2}, #{color_1}, #{color_2}, #{wallpaper}, #{flooring})")

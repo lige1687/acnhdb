@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface WallpaperMapper extends BaseMapper<Wallpaper> {
 
-    @Select("SELECT * FROM wallpaper WHERE name = #{name}")
+    @Select("SELECT * FROM wallpaper WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Wallpaper> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO wallpaper (Name, VFX, VFX_Type, DIY, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Source_Notes, Catalog, Window_Type, Window_Color, Pane_Type, Curtain_Type, Curtain_Color, Ceiling_Type, HHA_Concept_1, HHA_Concept_2, HHA_Series, Tag) VALUES (#{name}, #{vfx}, #{vfxType}, #{diy}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{sourceNotes}, #{catalog}, #{windowType}, #{windowColor}, #{paneType}, #{curtainType}, #{curtainColor}, #{ceilingType}, #{hhaConcept_1}, #{hhaConcept_2}, #{hhaSeries}, #{tag})")

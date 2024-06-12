@@ -7,8 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface WallMountedMapper extends BaseMapper<WallMounted> {
-
-    @Select("SELECT * FROM wall_mounted WHERE name = #{name}")
+    @Select("SELECT * FROM wall_mounted WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<WallMounted> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO wall_mounted (Name, Variation, Body_Title, Pattern, Pattern_Title, DIY, Body_Customize, Pattern_Customize, Kit_Cost, Buy, Sell, Color_1, Color_2, Size, Source, Source_Notes, HHA_Concept_1, HHA_Concept_2, HHA_Series, HHA_Set, Interact, Tag, Lighting_Type, Door_Deco, Catalog) VALUES (#{name}, #{variation}, #{bodyTitle}, #{pattern}, #{patternTitle}, #{diy}, #{bodyCustomize}, #{patternCustomize}, #{kitCost}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{size}, #{source}, #{sourceNotes}, #{hhaConcept_1}, #{hhaConcept_2}, #{hhaSeries}, #{hhaSet}, #{interact}, #{tag}, #{lightingType}, #{doorDeco}, #{catalog})")

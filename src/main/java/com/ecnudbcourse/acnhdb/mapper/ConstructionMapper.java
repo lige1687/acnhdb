@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ConstructionMapper extends BaseMapper<Construction> {
 
-    @Select("SELECT * FROM construction WHERE name = #{name}")
+    @Select("SELECT * FROM construction WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Construction> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO construction (Name, Buy, Category, Source) VALUES (#{name}, #{buy}, #{category}, #{source})")

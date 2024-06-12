@@ -4,11 +4,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ecnudbcourse.acnhdb.entity.Accessories;
 import org.apache.ibatis.annotations.*;
 import java.util.List;
-
 @Mapper
 public interface AccessoriesMapper extends BaseMapper<Accessories> {
 
-    @Select("SELECT * FROM accessories WHERE name = #{name}")
+    @Select("SELECT * FROM accessories WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Accessories> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO accessories (Name, Variation, DIY, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Source_Notes, Seasonal_Availability, Mannequin_Piece, Style, Label_Themes, Type, Villager_Equippable, Catalog) VALUES (#{name}, #{variation}, #{diy}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{sourceNotes}, #{seasonalAvailability}, #{mannequinPiece}, #{style}, #{labelThemes}, #{type}, #{villagerEquippable}, #{catalog})")

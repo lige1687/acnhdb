@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ReactionsMapper extends BaseMapper<Reactions> {
 
-    @Select("SELECT * FROM reactions WHERE name = #{name}")
+    @Select("SELECT * FROM reactions WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Reactions> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO reactions (Name, Source, Source_Notes) VALUES (#{name}, #{source}, #{sourceNotes})")

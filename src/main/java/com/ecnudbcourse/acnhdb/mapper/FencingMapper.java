@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface FencingMapper extends BaseMapper<Fencing> {
 
-    @Select("SELECT * FROM fencing WHERE name = #{name}")
+    @Select("SELECT * FROM fencing WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Fencing> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO fencing (Name, Sell, Source) VALUES (#{name}, #{sell}, #{source})")

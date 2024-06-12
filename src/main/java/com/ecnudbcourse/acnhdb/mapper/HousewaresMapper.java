@@ -11,7 +11,7 @@ import java.util.List;
 // basemapper提供了基本的查询方法, 可以使用xml自定义一些复杂的查询
 public interface HousewaresMapper extends BaseMapper<Housewares> {
 
-    @Select("SELECT * FROM housewares WHERE name = #{name}")
+    @Select("SELECT * FROM housewares WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Housewares> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO housewares (name, variation, body_title, pattern, pattern_title, diy, body_customize, pattern_customize, kit_cost, buy_price, sell_price, miles_price, color_1, color_2, size, interact, tag, outdoor, source, source_notes, hha_concept_1, hha_concept_2, hha_series, hha_set, speaker_type, lighting_type) VALUES (#{name}, #{variation}, #{bodyTitle}, #{pattern}, #{patternTitle}, #{diy}, #{bodyCustomize}, #{patternCustomize}, #{kitCost}, #{buyPrice}, #{sellPrice}, #{milesPrice}, #{color1}, #{color2}, #{size}, #{interact}, #{tag}, #{outdoor}, #{source}, #{sourceNotes}, #{hhaConcept1}, #{hhaConcept2}, #{hhaSeries}, #{hhaSet}, #{speakerType}, #{lightingType})")

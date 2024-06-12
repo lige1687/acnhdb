@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ArtMapper extends BaseMapper<Art> {
 
-    @Select("SELECT * FROM art WHERE name = #{name}")
+    @Select("SELECT * FROM art WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Art> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO art (Name, Genuine, Category, Buy, Sell, Size, Real_Artwork_Title, Artist, Museum_Description, HHA_Concept_1, HHA_Concept_2, Tag) VALUES (#{name}, #{genuine}, #{category}, #{buy}, #{sell}, #{size}, #{realArtworkTitle}, #{artist}, #{museumDescription}, #{hhaConcept_1}, #{hhaConcept_2}, #{tag})")

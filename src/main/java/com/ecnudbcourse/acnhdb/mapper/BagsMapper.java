@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface BagsMapper extends BaseMapper<Bags> {
 
-    @Select("SELECT * FROM bags WHERE name = #{name}")
+    @Select("SELECT * FROM bags WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Bags> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO bags (Name, Variation, DIY, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Style, Label_Themes, Catalog) VALUES (#{name}, #{variation}, #{diy}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{style}, #{labelThemes}, #{catalog})")
