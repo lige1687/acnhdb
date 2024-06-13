@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface AchievementsMapper extends BaseMapper<Achievements> {
 
-    @Select("SELECT * FROM achievements WHERE name = #{name}")
+    @Select("SELECT * FROM achievements WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Achievements> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO achievements (Name, Award_Criteria, Internal_Category, Num_of_Tiers, Tier_1, Tier_2, Tier_3, Tier_4, Tier_5, Reward_Tier_1, Reward_Tier_2, Reward_Tier_3, Reward_Tier_4, Reward_Tier_5, Reward_Tier_6, Sequential) VALUES (#{name}, #{awardCriteria}, #{internalCategory}, #{numOfTiers}, #{tier_1}, #{tier_2}, #{tier_3}, #{tier_4}, #{tier_5}, #{rewardTier_1}, #{rewardTier_2}, #{rewardTier_3}, #{rewardTier_4}, #{rewardTier_5}, #{rewardTier_6}, #{sequential})")

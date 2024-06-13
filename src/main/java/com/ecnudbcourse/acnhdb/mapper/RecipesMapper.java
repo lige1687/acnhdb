@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface RecipesMapper extends BaseMapper<Recipes> {
 
-    @Select("SELECT * FROM recipes WHERE name = #{name}")
+    @Select("SELECT * FROM recipes WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Recipes> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO recipes (name, number_of_material_1, material_1, number_of_material_2, material_2, number_of_material_3, material_3, number_of_material_4, material_4, number_of_material_5, material_5, number_of_material_6, material_6, recipes_to_unlock, category) " +
@@ -24,4 +24,6 @@ public interface RecipesMapper extends BaseMapper<Recipes> {
 
     @Delete("DELETE FROM recipes WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
+
+    Recipes selectRecipeByName(@Param("name") String name);
 }

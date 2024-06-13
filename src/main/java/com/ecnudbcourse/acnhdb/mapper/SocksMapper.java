@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface SocksMapper extends BaseMapper<Socks> {
 
-    @Select("SELECT * FROM socks WHERE name = #{name}")
+    @Select("SELECT * FROM socks WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Socks> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO socks (Name, Variation, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Source_Notes, Seasonal_Availability, Mannequin_Piece, Style, Label_Themes, Catalog) VALUES (#{name}, #{variation}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{sourceNotes}, #{seasonalAvailability}, #{mannequinPiece}, #{style}, #{labelThemes}, #{catalog})")

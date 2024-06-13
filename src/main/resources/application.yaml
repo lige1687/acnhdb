@@ -1,10 +1,8 @@
 spring:
   application:
     name: acnhdb
-  datasource:
-    url: jdbc:mysql://localhost:53306/acnh
-    username: test
-    password: StrongPassword123!
+  profiles:
+    active: dev  # 默认激活开发环境配置
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,6 +11,19 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
 
+
+logging:
+  level:
+    com:
+      ecnudbcourse:
+        acnhdb:
+          mapper: debug
+          service: debug
+          entity: debug
+          controller: debug
+
+    org:
+      mybatis: debug
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml

@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface HeadwearMapper extends BaseMapper<Headwear> {
 
-    @Select("SELECT * FROM headwear WHERE name = #{name}")
+    @Select("SELECT * FROM headwear WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Headwear> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO headwear (Name, Variation, DIY, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Source_Notes, Seasonal_Availability, Mannequin_Piece, Style, Label_Themes, Type, Villager_Equippable, Catalog) VALUES (#{name}, #{variation}, #{diy}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{sourceNotes}, #{seasonalAvailability}, #{mannequinPiece}, #{style}, #{labelThemes}, #{type}, #{villagerEquippable}, #{catalog})")

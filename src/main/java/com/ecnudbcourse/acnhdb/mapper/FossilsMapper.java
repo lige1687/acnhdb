@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface FossilsMapper extends BaseMapper<Fossils> {
 
-    @Select("SELECT * FROM fossils WHERE name = #{name}")
+    @Select("SELECT * FROM fossils WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Fossils> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO fossils (Name, Sell, Color_1, Color_2, Size, Museum, Interact) VALUES (#{name}, #{sell}, #{color_1}, #{color_2}, #{size}, #{museum}, #{interact})")

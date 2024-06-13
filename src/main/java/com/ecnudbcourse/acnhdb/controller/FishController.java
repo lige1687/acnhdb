@@ -22,4 +22,6 @@ public class FishController {
     @GetMapping("/findByName")
     public List<Fish> findByName(@RequestParam String name) { return fishService.findByName(name); }
 
+    // 格式 如上 ,GET /api/activities/active?month=Jun&time=8AM
+
 }

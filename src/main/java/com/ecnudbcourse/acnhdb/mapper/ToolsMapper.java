@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ToolsMapper extends BaseMapper<Tools> {
 
-    @Select("SELECT * FROM tools WHERE name = #{name}")
+    @Select("SELECT * FROM tools WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Tools> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO tools (name, variation, body_title, diy, customize, kit_cost, uses, stack_size, buy, sell, tool_set, miles_price, source, source_notes) " +

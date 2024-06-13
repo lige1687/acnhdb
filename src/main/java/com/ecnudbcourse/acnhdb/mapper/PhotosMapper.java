@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface PhotosMapper extends BaseMapper<Photos> {
 
-    @Select("SELECT * FROM photos WHERE name = #{name}")
+    @Select("SELECT * FROM photos WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Photos> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO photos (Name, Variation, Color_1, Color_2) VALUES (#{name}, #{variation}, #{color_1}, #{color_2})")

@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface PostersMapper extends BaseMapper<Posters> {
 
-    @Select("SELECT * FROM posters WHERE name = #{name}")
+    @Select("SELECT * FROM posters WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Posters> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO posters (Name, Color_1, Color_2, Source_Notes) VALUES (#{name}, #{color_1}, #{color_2}, #{sourceNotes})")

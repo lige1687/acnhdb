@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface OtherMapper extends BaseMapper<Other> {
 
-    @Select("SELECT * FROM other WHERE name = #{name}")
+    @Select("SELECT * FROM other WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Other> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO other (Name, DIY, Stack_Size, Buy, Sell, Miles_Price, Source, Source_Notes, Tag, Color_1, Color_2) VALUES (#{name}, #{diy}, #{stackSize}, #{buy}, #{sell}, #{milesPrice}, #{source}, #{sourceNotes}, #{tag}, #{color_1}, #{color_2})")

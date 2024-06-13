@@ -1,5 +1,6 @@
 package com.ecnudbcourse.acnhdb.controller;
 
+import com.ecnudbcourse.acnhdb.dto.HouseWareMaterials;
 import com.ecnudbcourse.acnhdb.entity.Housewares;
 import com.ecnudbcourse.acnhdb.service.HousewaresService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ public class HousewaresController {
         return housewaresService.findByName(name);
     }
 
+    @GetMapping("/materials")
+    public List<HouseWareMaterials> getHouseWareMaterialsByName(@RequestParam String name) {
+        return housewaresService.getHouseWareMaterialsByName(name);
+    }
     /*
     @PostMapping
     public void save(@RequestBody Housewares housewares) {

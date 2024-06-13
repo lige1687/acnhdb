@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface MusicMapper extends BaseMapper<Music> {
 
-    @Select("SELECT * FROM music WHERE name = #{name}")
+    @Select("SELECT * FROM music WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Music> findByName(@Param("name") String name);
 
     @Insert("INSERT INTO music (Name, Buy, Sell, Color_1, Color_2, Size, Source, Source_Notes, Catalog) VALUES (#{name}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{size}, #{source}, #{sourceNotes}, #{catalog})")
