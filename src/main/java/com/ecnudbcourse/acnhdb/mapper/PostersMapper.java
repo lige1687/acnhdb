@@ -11,11 +11,11 @@ public interface PostersMapper extends BaseMapper<Posters> {
     @Select("SELECT * FROM posters WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Posters> findByName(@Param("name") String name);
 
-    @Insert("INSERT INTO posters (Name, Color_1, Color_2, Source_Notes) VALUES (#{name}, #{color_1}, #{color_2}, #{sourceNotes})")
+    @Insert("INSERT INTO posters (Name, Color1, Color2, Source_Notes) VALUES (#{name}, #{color1}, #{color2}, #{sourceNotes})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertPosters(Posters posters);
 
-    @Update("UPDATE posters SET Name = #{name}, Color_1 = #{color_1}, Color_2 = #{color_2}, Source_Notes = #{sourceNotes} WHERE id = #{id}")
+    @Update("UPDATE posters SET Name = #{name}, Color1 = #{color1}, Color2 = #{color2}, Source_Notes = #{sourceNotes} WHERE id = #{id}")
     int updatePosters(Posters posters);
 
     @Delete("DELETE FROM posters WHERE id = #{id}")

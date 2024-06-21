@@ -24,4 +24,8 @@ public class FencingService {
 
     public Fencing getById(Long id) { return fencingMapper.selectById(id); }
 
+
+    public List<Fencing> searchFencingBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return fencingMapper.searchBySellRangeAndSort(min, max, sort);
+    }
 }

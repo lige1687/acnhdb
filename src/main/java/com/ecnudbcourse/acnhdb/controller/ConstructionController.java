@@ -5,6 +5,7 @@ import com.ecnudbcourse.acnhdb.service.ConstructionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/construction")
@@ -22,4 +23,17 @@ public class ConstructionController {
     @GetMapping("/findByName")
     public List<Construction> findByName(@RequestParam String name) { return constructionService.findByName(name); }
 
+
+    @GetMapping("/searchBuy")
+    public List<Construction> searchConstructionByBuyRangeAndSort(
+            @RequestParam(required = false) Integer min,
+            @RequestParam(required = false) Integer max,
+            @RequestParam(required = false) String sort) {
+
+        if (!Objects.equals(sort, "") && !sort.equalsIgnoreCase("asc") && !sort.equalsIgnoreCase("desc")) {
+            throw new IllegalArgumentException("Invalid sort parameter. Must be 'asc' or 'desc'.");
+        }
+
+        return constructionService.searchConstructionByBuyRangeAndSort(min, max, sort);
+    }
 }

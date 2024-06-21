@@ -24,4 +24,8 @@ public class ConstructionService {
 
     public Construction getById(Long id) { return constructionMapper.selectById(id); }
 
+
+    public List<Construction> searchConstructionByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return constructionMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
 }

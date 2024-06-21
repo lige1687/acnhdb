@@ -16,8 +16,8 @@ public class Accessories {
     private String diy;
     private Integer buy;
     private Integer sell;
-    private String color_1;
-    private String color_2;
+    private String color1;
+    private String color2;
     private Integer milesPrice;
     private String source;
     private String sourceNotes;

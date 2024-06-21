@@ -1,7 +1,6 @@
 package com.ecnudbcourse.acnhdb.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -17,27 +16,13 @@ public class Floors {
     private String diy;
     private Integer buy;
     private Integer sell;
-
-    @TableField("Color_1")
-    private String color_1;
-
-    @TableField("Color_2")
-    private String color_2;
-
-    @TableField("Miles_Price")
+    private String color1;
+    private String color2;
     private Integer milesPrice;
-
     private String source;
-
-    @TableField("HHA_Concept_1")
-    private String hhaConcept_1;
-
-    @TableField("HHA_Concept_2")
-    private String hhaConcept_2;
-
-    @TableField("HHA_Series")
+    private String hhaConcept1;
+    private String hhaConcept2;
     private String hhaSeries;
-
     private String tag;
     private String catalog;
 }

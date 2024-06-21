@@ -11,14 +11,47 @@ public interface SocksMapper extends BaseMapper<Socks> {
     @Select("SELECT * FROM socks WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Socks> findByName(@Param("name") String name);
 
-    @Insert("INSERT INTO socks (Name, Variation, Buy, Sell, Color_1, Color_2, Miles_Price, Source, Source_Notes, Seasonal_Availability, Mannequin_Piece, Style, Label_Themes, Catalog) VALUES (#{name}, #{variation}, #{buy}, #{sell}, #{color_1}, #{color_2}, #{milesPrice}, #{source}, #{sourceNotes}, #{seasonalAvailability}, #{mannequinPiece}, #{style}, #{labelThemes}, #{catalog})")
+    @Insert("INSERT INTO socks (Name, Variation, Buy, Sell, Color1, Color2, Miles_Price, Source, Source_Notes, Seasonal_Availability, Mannequin_Piece, Style, Label_Themes, Catalog) VALUES (#{name}, #{variation}, #{buy}, #{sell}, #{color1}, #{color2}, #{milesPrice}, #{source}, #{sourceNotes}, #{seasonalAvailability}, #{mannequinPiece}, #{style}, #{labelThemes}, #{catalog})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertSocks(Socks socks);
 
-    @Update("UPDATE socks SET Name = #{name}, Variation = #{variation}, Buy = #{buy}, Sell = #{sell}, Color_1 = #{color_1}, Color_2 = #{color_2}, Miles_Price = #{milesPrice}, Source = #{source}, Source_Notes = #{sourceNotes}, Seasonal_Availability = #{seasonalAvailability}, Mannequin_Piece = #{mannequinPiece}, Style = #{style}, Label_Themes = #{labelThemes}, Catalog = #{catalog} WHERE id = #{id}")
+    @Update("UPDATE socks SET Name = #{name}, Variation = #{variation}, Buy = #{buy}, Sell = #{sell}, Color1 = #{color1}, Color2 = #{color2}, Miles_Price = #{milesPrice}, Source = #{source}, Source_Notes = #{sourceNotes}, Seasonal_Availability = #{seasonalAvailability}, Mannequin_Piece = #{mannequinPiece}, Style = #{style}, Label_Themes = #{labelThemes}, Catalog = #{catalog} WHERE id = #{id}")
     int updateSocks(Socks socks);
 
     @Delete("DELETE FROM socks WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("<script>" +
+            "SELECT * FROM socks" +
+            " WHERE 1=1 AND buy != 0" +
+            "<if test='min != null'> AND buy &gt;= #{min}</if>" +
+            "<if test='max != null'> AND buy &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY buy ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Socks> searchByBuyRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("<script>" +
+            "SELECT * FROM socks" +
+            " WHERE 1=1 AND sell != 0" +
+            "<if test='min != null'> AND sell &gt;= #{min}</if>" +
+            "<if test='max != null'> AND sell &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY sell ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Socks> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("<script>" +
+            "SELECT * FROM socks" +
+            " WHERE 1=1 AND miles_Price != 0" +
+            "<if test='min != null'> AND miles_Price &gt;= #{min}</if>" +
+            "<if test='max != null'> AND miles_Price &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY miles_Price ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Socks> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 }

@@ -2,6 +2,9 @@ package com.ecnudbcourse.acnhdb.service;
 
 import com.ecnudbcourse.acnhdb.entity.Headwear;
 import com.ecnudbcourse.acnhdb.mapper.HeadwearMapper;
+import com.ecnudbcourse.acnhdb.dto.HeadwearMaterials;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -24,4 +27,26 @@ public class HeadwearService {
 
     public Headwear getById(Long id) { return headwearMapper.selectById(id); }
 
+
+    public List<Headwear> searchHeadwearByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return headwearMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
+
+    public List<Headwear> searchHeadwearBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return headwearMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
+    public List<Headwear> searchHeadwearByMilesPriceRangeAndSort(Integer min, Integer max, String sort) {
+        return headwearMapper.searchByMilesPriceRangeAndSort(min, max, sort);
+    }
+
+    public List<Headwear> searchHeadwearByDiy(String diy) {
+        return headwearMapper.findByDiy(diy);
+    }
+
+    public List<HeadwearMaterials> getHeadwearMaterialsByName(String name) {
+        List<HeadwearMaterials> materials = headwearMapper.selectHeadwearMaterialsByName(name);
+        Set<HeadwearMaterials> uniqueMaterials = materials.stream().collect(Collectors.toSet());
+        return List.copyOf(uniqueMaterials);
+    }
 }

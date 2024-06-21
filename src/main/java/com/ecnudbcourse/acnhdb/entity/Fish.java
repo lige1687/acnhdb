@@ -101,11 +101,9 @@ public class Fish {
     @TableField("SH_Dec")
     private String shDec;
 
-    @TableField("Color_1")
-    private String color_1;
+    private String color1;
 
-    @TableField("Color_2")
-    private String color_2;
+    private String color2;
 
     private String size;
 
@@ -137,7 +135,8 @@ public class Fish {
             case "SH_Oct": return shOct;
             case "SH_Nov": return shNov;
             case "SH_Dec": return shDec;
-            default: return shJun;
+            default: return null;
         }
+
     }
 }

@@ -24,4 +24,16 @@ public class ArtService {
 
     public Art getById(Long id) { return artMapper.selectById(id); }
 
+
+    public List<Art> searchArtByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return artMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
+
+    public List<Art> searchArtBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return artMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
+    public List<Art> searchArtByGenuine(String genuine) {
+        return artMapper.findByGenuine(genuine);
+    }
 }

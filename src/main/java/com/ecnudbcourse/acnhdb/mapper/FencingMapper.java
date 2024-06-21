@@ -21,4 +21,15 @@ public interface FencingMapper extends BaseMapper<Fencing> {
     @Delete("DELETE FROM fencing WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("<script>" +
+            "SELECT * FROM fencing" +
+            " WHERE 1=1 AND sell != 0" +
+            "<if test='min != null'> AND sell &gt;= #{min}</if>" +
+            "<if test='max != null'> AND sell &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY sell ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Fencing> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 }

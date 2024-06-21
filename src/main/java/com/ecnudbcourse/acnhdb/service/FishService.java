@@ -29,7 +29,6 @@ public class FishService {
     public List<Fish> getActiveFish(String month, String time) {
         return fishMapper.findActiveFish(month, time);
     }
-
     public List<Fish> findActiveFish(String month, int hour) {
         List<Fish> allFish = fishMapper.findAllFish();
         System.out.println("All Fish: " + allFish.size());  // 打印所有鱼的数据大小
@@ -51,6 +50,10 @@ public class FishService {
     }
 
     private boolean isTimeInRange(String timeRange, int hour) {
+        if (timeRange.equalsIgnoreCase("All day")) {
+            return true;
+        }
+
         String[] times = timeRange.replace("&nbsp;", " ").split("-");
         if (times.length != 2) {
             return false;
@@ -60,6 +63,7 @@ public class FishService {
         System.out.println("Start Hour: " + startHour + ", End Hour: " + endHour);  // 打印开始和结束小时
         return (hour >= startHour && hour < endHour) || (endHour < startHour && (hour >= startHour || hour < endHour));
     }
+
     private int convertTo24Hour(String time) {
         boolean isPM = time.toUpperCase().contains("PM");
         time = time.replaceAll("[^0-9]", "");
@@ -72,4 +76,5 @@ public class FishService {
         }
         return hour;
     }
+
 }

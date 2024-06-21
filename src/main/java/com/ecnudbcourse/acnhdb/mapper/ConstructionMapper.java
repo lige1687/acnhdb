@@ -21,4 +21,15 @@ public interface ConstructionMapper extends BaseMapper<Construction> {
     @Delete("DELETE FROM construction WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("<script>" +
+            "SELECT * FROM construction" +
+            " WHERE 1=1 AND buy != 0" +
+            "<if test='min != null'> AND buy &gt;= #{min}</if>" +
+            "<if test='max != null'> AND buy &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY buy ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Construction> searchByBuyRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 }

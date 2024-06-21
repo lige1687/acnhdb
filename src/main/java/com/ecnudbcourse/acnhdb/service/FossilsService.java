@@ -24,4 +24,12 @@ public class FossilsService {
 
     public Fossils getById(Long id) { return fossilsMapper.selectById(id); }
 
+
+    public List<Fossils> searchFossilsBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return fossilsMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
+    public List<Fossils> searchFossilsByInteract(String interact) {
+        return fossilsMapper.findByInteract(interact);
+    }
 }

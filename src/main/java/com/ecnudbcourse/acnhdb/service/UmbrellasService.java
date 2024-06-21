@@ -2,6 +2,9 @@ package com.ecnudbcourse.acnhdb.service;
 
 import com.ecnudbcourse.acnhdb.entity.Umbrellas;
 import com.ecnudbcourse.acnhdb.mapper.UmbrellasMapper;
+import com.ecnudbcourse.acnhdb.dto.UmbrellasMaterials;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -24,4 +27,26 @@ public class UmbrellasService {
 
     public Umbrellas getById(Long id) { return umbrellasMapper.selectById(id); }
 
+
+    public List<Umbrellas> searchUmbrellasByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return umbrellasMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
+
+    public List<Umbrellas> searchUmbrellasBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return umbrellasMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
+    public List<Umbrellas> searchUmbrellasByMilesPriceRangeAndSort(Integer min, Integer max, String sort) {
+        return umbrellasMapper.searchByMilesPriceRangeAndSort(min, max, sort);
+    }
+
+    public List<Umbrellas> searchUmbrellasByDiy(String diy) {
+        return umbrellasMapper.findByDiy(diy);
+    }
+
+    public List<UmbrellasMaterials> getUmbrellasMaterialsByName(String name) {
+        List<UmbrellasMaterials> materials = umbrellasMapper.selectUmbrellasMaterialsByName(name);
+        Set<UmbrellasMaterials> uniqueMaterials = materials.stream().collect(Collectors.toSet());
+        return List.copyOf(uniqueMaterials);
+    }
 }

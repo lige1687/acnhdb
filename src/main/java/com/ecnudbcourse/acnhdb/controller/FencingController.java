@@ -5,6 +5,7 @@ import com.ecnudbcourse.acnhdb.service.FencingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/fencing")
@@ -22,4 +23,17 @@ public class FencingController {
     @GetMapping("/findByName")
     public List<Fencing> findByName(@RequestParam String name) { return fencingService.findByName(name); }
 
+
+    @GetMapping("/searchSell")
+    public List<Fencing> searchFencingBySellRangeAndSort(
+            @RequestParam(required = false) Integer min,
+            @RequestParam(required = false) Integer max,
+            @RequestParam(required = false) String sort) {
+
+        if (!Objects.equals(sort, "") && !sort.equalsIgnoreCase("asc") && !sort.equalsIgnoreCase("desc")) {
+            throw new IllegalArgumentException("Invalid sort parameter. Must be 'asc' or 'desc'.");
+        }
+
+        return fencingService.searchFencingBySellRangeAndSort(min, max, sort);
+    }
 }

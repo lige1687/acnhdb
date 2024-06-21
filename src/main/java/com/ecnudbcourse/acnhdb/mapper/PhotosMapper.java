@@ -11,11 +11,11 @@ public interface PhotosMapper extends BaseMapper<Photos> {
     @Select("SELECT * FROM photos WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Photos> findByName(@Param("name") String name);
 
-    @Insert("INSERT INTO photos (Name, Variation, Color_1, Color_2) VALUES (#{name}, #{variation}, #{color_1}, #{color_2})")
+    @Insert("INSERT INTO photos (Name, Variation, Color1, Color2) VALUES (#{name}, #{variation}, #{color1}, #{color2})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertPhotos(Photos photos);
 
-    @Update("UPDATE photos SET Name = #{name}, Variation = #{variation}, Color_1 = #{color_1}, Color_2 = #{color_2} WHERE id = #{id}")
+    @Update("UPDATE photos SET Name = #{name}, Variation = #{variation}, Color1 = #{color1}, Color2 = #{color2} WHERE id = #{id}")
     int updatePhotos(Photos photos);
 
     @Delete("DELETE FROM photos WHERE id = #{id}")

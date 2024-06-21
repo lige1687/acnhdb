@@ -98,11 +98,9 @@ public class Insects {
     @TableField("SH_Dec")
     private String shDec;
 
-    @TableField("Color_1")
-    private String color_1;
+    private String color1;
 
-    @TableField("Color_2")
-    private String color_2;
+    private String color2;
 
     // 添加方法来获取时间范围字段的值
     public String getTimeRange(String month) {

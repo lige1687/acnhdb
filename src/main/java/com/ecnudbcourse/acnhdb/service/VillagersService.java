@@ -24,7 +24,4 @@ public class VillagersService {
 
     public Villagers getById(Long id) { return villagersMapper.selectById(id); }
 
-    public List<Villagers> findVillagers(String species, String gender, String personality, String hobby, String birthdayMonth) {
-        return villagersMapper.findVillagers(species, gender, personality, hobby,birthdayMonth );
-    }
 }

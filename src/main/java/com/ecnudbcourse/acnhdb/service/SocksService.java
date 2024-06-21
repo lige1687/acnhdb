@@ -24,4 +24,16 @@ public class SocksService {
 
     public Socks getById(Long id) { return socksMapper.selectById(id); }
 
+
+    public List<Socks> searchSocksByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return socksMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
+
+    public List<Socks> searchSocksBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return socksMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
+    public List<Socks> searchSocksByMilesPriceRangeAndSort(Integer min, Integer max, String sort) {
+        return socksMapper.searchByMilesPriceRangeAndSort(min, max, sort);
+    }
 }

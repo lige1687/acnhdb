@@ -24,4 +24,12 @@ public class MusicService {
 
     public Music getById(Long id) { return musicMapper.selectById(id); }
 
+
+    public List<Music> searchMusicByBuyRangeAndSort(Integer min, Integer max, String sort) {
+        return musicMapper.searchByBuyRangeAndSort(min, max, sort);
+    }
+
+    public List<Music> searchMusicBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return musicMapper.searchBySellRangeAndSort(min, max, sort);
+    }
 }
