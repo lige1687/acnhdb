@@ -69,6 +69,56 @@ public class RugsController {
         return rugsService.searchRugsByDiy(diy);
     }
 
+    @GetMapping("/searchColor1")
+    public List<Rugs> searchRugsByColor1(@RequestParam(required = false) String color1) {
+        return rugsService.searchRugsByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Rugs> searchRugsByColor2(@RequestParam(required = false) String color2) {
+        return rugsService.searchRugsByColor2(color2);
+    }
+
+    @GetMapping("/searchSize")
+    public List<Rugs> searchRugsBySize(@RequestParam(required = false) String size) {
+        return rugsService.searchRugsBySize(size);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Rugs> searchRugsBySource(@RequestParam(required = false) String source) {
+        return rugsService.searchRugsBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Rugs> searchRugsBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return rugsService.searchRugsBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchHhaConcept1")
+    public List<Rugs> searchRugsByHhaConcept1(@RequestParam(required = false) String hhaConcept1) {
+        return rugsService.searchRugsByHhaConcept1(hhaConcept1);
+    }
+
+    @GetMapping("/searchHhaConcept2")
+    public List<Rugs> searchRugsByHhaConcept2(@RequestParam(required = false) String hhaConcept2) {
+        return rugsService.searchRugsByHhaConcept2(hhaConcept2);
+    }
+
+    @GetMapping("/searchHhaSeries")
+    public List<Rugs> searchRugsByHhaSeries(@RequestParam(required = false) String hhaSeries) {
+        return rugsService.searchRugsByHhaSeries(hhaSeries);
+    }
+
+    @GetMapping("/searchTag")
+    public List<Rugs> searchRugsByTag(@RequestParam(required = false) String tag) {
+        return rugsService.searchRugsByTag(tag);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Rugs> searchRugsByCatalog(@RequestParam(required = false) String catalog) {
+        return rugsService.searchRugsByCatalog(catalog);
+    }
+
     @GetMapping("/materials")
     public List<RugsMaterials> getRugsMaterialsByName(@RequestParam String name) {
         return rugsService.getRugsMaterialsByName(name);

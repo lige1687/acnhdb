@@ -28,4 +28,12 @@ public class ConstructionService {
     public List<Construction> searchConstructionByBuyRangeAndSort(Integer min, Integer max, String sort) {
         return constructionMapper.searchByBuyRangeAndSort(min, max, sort);
     }
+
+    public List<Construction> searchConstructionByCategory(String category) {
+        return constructionMapper.findByCategory(category);
+    }
+
+    public List<Construction> searchConstructionBySource(String source) {
+        return constructionMapper.findBySource(source);
+    }
 }

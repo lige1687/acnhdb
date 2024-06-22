@@ -24,4 +24,16 @@ public class PostersService {
 
     public Posters getById(Long id) { return postersMapper.selectById(id); }
 
+
+    public List<Posters> searchPostersByColor1(String color1) {
+        return postersMapper.findByColor1(color1);
+    }
+
+    public List<Posters> searchPostersByColor2(String color2) {
+        return postersMapper.findByColor2(color2);
+    }
+
+    public List<Posters> searchPostersBySourceNotes(String sourceNotes) {
+        return postersMapper.findBySourceNotes(sourceNotes);
+    }
 }

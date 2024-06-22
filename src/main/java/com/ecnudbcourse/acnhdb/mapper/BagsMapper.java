@@ -56,8 +56,29 @@ public interface BagsMapper extends BaseMapper<Bags> {
             "</script>")
     List<Bags> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM bags WHERE diy = #{diy}")
+    @Select("SELECT * FROM bags WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Bags> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM bags WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Bags> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM bags WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Bags> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM bags WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Bags> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM bags WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Bags> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM bags WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Bags> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM bags WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Bags> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM bags WHERE Catalog = #{catalog}")
+    List<Bags> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

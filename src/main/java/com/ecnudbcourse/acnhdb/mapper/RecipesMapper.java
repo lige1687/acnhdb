@@ -21,4 +21,46 @@ public interface RecipesMapper extends BaseMapper<Recipes> {
     @Delete("DELETE FROM recipes WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material1 LIKE CONCAT('%', #{numberOfMaterial1}, '%')")
+    List<Recipes> findByNumberOfMaterial1(@Param("numberOfMaterial1") String numberOfMaterial1);
+
+    @Select("SELECT * FROM recipes WHERE Material1 LIKE CONCAT('%', #{material1}, '%')")
+    List<Recipes> findByMaterial1(@Param("material1") String material1);
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material2 LIKE CONCAT('%', #{numberOfMaterial2}, '%')")
+    List<Recipes> findByNumberOfMaterial2(@Param("numberOfMaterial2") String numberOfMaterial2);
+
+    @Select("SELECT * FROM recipes WHERE Material2 LIKE CONCAT('%', #{material2}, '%')")
+    List<Recipes> findByMaterial2(@Param("material2") String material2);
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material3 LIKE CONCAT('%', #{numberOfMaterial3}, '%')")
+    List<Recipes> findByNumberOfMaterial3(@Param("numberOfMaterial3") String numberOfMaterial3);
+
+    @Select("SELECT * FROM recipes WHERE Material3 LIKE CONCAT('%', #{material3}, '%')")
+    List<Recipes> findByMaterial3(@Param("material3") String material3);
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material4 LIKE CONCAT('%', #{numberOfMaterial4}, '%')")
+    List<Recipes> findByNumberOfMaterial4(@Param("numberOfMaterial4") String numberOfMaterial4);
+
+    @Select("SELECT * FROM recipes WHERE Material4 LIKE CONCAT('%', #{material4}, '%')")
+    List<Recipes> findByMaterial4(@Param("material4") String material4);
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material5 LIKE CONCAT('%', #{numberOfMaterial5}, '%')")
+    List<Recipes> findByNumberOfMaterial5(@Param("numberOfMaterial5") String numberOfMaterial5);
+
+    @Select("SELECT * FROM recipes WHERE Material5 LIKE CONCAT('%', #{material5}, '%')")
+    List<Recipes> findByMaterial5(@Param("material5") String material5);
+
+    @Select("SELECT * FROM recipes WHERE Number_Of_Material6 LIKE CONCAT('%', #{numberOfMaterial6}, '%')")
+    List<Recipes> findByNumberOfMaterial6(@Param("numberOfMaterial6") String numberOfMaterial6);
+
+    @Select("SELECT * FROM recipes WHERE Material6 LIKE CONCAT('%', #{material6}, '%')")
+    List<Recipes> findByMaterial6(@Param("material6") String material6);
+
+    @Select("SELECT * FROM recipes WHERE Recipes_to_Unlock LIKE CONCAT('%', #{recipesToUnlock}, '%')")
+    List<Recipes> findByRecipesToUnlock(@Param("recipesToUnlock") String recipesToUnlock);
+
+    @Select("SELECT * FROM recipes WHERE Category LIKE CONCAT('%', #{category}, '%')")
+    List<Recipes> findByCategory(@Param("category") String category);
 }

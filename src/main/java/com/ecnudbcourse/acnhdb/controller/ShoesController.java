@@ -64,9 +64,59 @@ public class ShoesController {
         return shoesService.searchShoesByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Shoes> searchShoesByVariation(@RequestParam(required = false) String variation) {
+        return shoesService.searchShoesByVariation(variation);
+    }
+
     @GetMapping("/searchDiy")
     public List<Shoes> searchShoesByDiy(@RequestParam(required = false) String diy) {
         return shoesService.searchShoesByDiy(diy);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Shoes> searchShoesByColor1(@RequestParam(required = false) String color1) {
+        return shoesService.searchShoesByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Shoes> searchShoesByColor2(@RequestParam(required = false) String color2) {
+        return shoesService.searchShoesByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Shoes> searchShoesBySource(@RequestParam(required = false) String source) {
+        return shoesService.searchShoesBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Shoes> searchShoesBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return shoesService.searchShoesBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchSeasonalAvailability")
+    public List<Shoes> searchShoesBySeasonalAvailability(@RequestParam(required = false) String seasonalAvailability) {
+        return shoesService.searchShoesBySeasonalAvailability(seasonalAvailability);
+    }
+
+    @GetMapping("/searchMannequinPiece")
+    public List<Shoes> searchShoesByMannequinPiece(@RequestParam(required = false) String mannequinPiece) {
+        return shoesService.searchShoesByMannequinPiece(mannequinPiece);
+    }
+
+    @GetMapping("/searchStyle")
+    public List<Shoes> searchShoesByStyle(@RequestParam(required = false) String style) {
+        return shoesService.searchShoesByStyle(style);
+    }
+
+    @GetMapping("/searchLabelThemes")
+    public List<Shoes> searchShoesByLabelThemes(@RequestParam(required = false) String labelThemes) {
+        return shoesService.searchShoesByLabelThemes(labelThemes);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Shoes> searchShoesByCatalog(@RequestParam(required = false) String catalog) {
+        return shoesService.searchShoesByCatalog(catalog);
     }
 
     @GetMapping("/materials")

@@ -64,6 +64,26 @@ public class MiscellaneousController {
         return miscellaneousService.searchMiscellaneousByKitCostRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Miscellaneous> searchMiscellaneousByVariation(@RequestParam(required = false) String variation) {
+        return miscellaneousService.searchMiscellaneousByVariation(variation);
+    }
+
+    @GetMapping("/searchBodyTitle")
+    public List<Miscellaneous> searchMiscellaneousByBodyTitle(@RequestParam(required = false) String bodyTitle) {
+        return miscellaneousService.searchMiscellaneousByBodyTitle(bodyTitle);
+    }
+
+    @GetMapping("/searchPattern")
+    public List<Miscellaneous> searchMiscellaneousByPattern(@RequestParam(required = false) String pattern) {
+        return miscellaneousService.searchMiscellaneousByPattern(pattern);
+    }
+
+    @GetMapping("/searchPatternTitle")
+    public List<Miscellaneous> searchMiscellaneousByPatternTitle(@RequestParam(required = false) String patternTitle) {
+        return miscellaneousService.searchMiscellaneousByPatternTitle(patternTitle);
+    }
+
     @GetMapping("/searchDiy")
     public List<Miscellaneous> searchMiscellaneousByDiy(@RequestParam(required = false) String diy) {
         return miscellaneousService.searchMiscellaneousByDiy(diy);
@@ -79,14 +99,79 @@ public class MiscellaneousController {
         return miscellaneousService.searchMiscellaneousByPatternCustomize(patternCustomize);
     }
 
+    @GetMapping("/searchColor1")
+    public List<Miscellaneous> searchMiscellaneousByColor1(@RequestParam(required = false) String color1) {
+        return miscellaneousService.searchMiscellaneousByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Miscellaneous> searchMiscellaneousByColor2(@RequestParam(required = false) String color2) {
+        return miscellaneousService.searchMiscellaneousByColor2(color2);
+    }
+
+    @GetMapping("/searchSize")
+    public List<Miscellaneous> searchMiscellaneousBySize(@RequestParam(required = false) String size) {
+        return miscellaneousService.searchMiscellaneousBySize(size);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Miscellaneous> searchMiscellaneousBySource(@RequestParam(required = false) String source) {
+        return miscellaneousService.searchMiscellaneousBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Miscellaneous> searchMiscellaneousBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return miscellaneousService.searchMiscellaneousBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchHhaConcept1")
+    public List<Miscellaneous> searchMiscellaneousByHhaConcept1(@RequestParam(required = false) String hhaConcept1) {
+        return miscellaneousService.searchMiscellaneousByHhaConcept1(hhaConcept1);
+    }
+
+    @GetMapping("/searchHhaConcept2")
+    public List<Miscellaneous> searchMiscellaneousByHhaConcept2(@RequestParam(required = false) String hhaConcept2) {
+        return miscellaneousService.searchMiscellaneousByHhaConcept2(hhaConcept2);
+    }
+
+    @GetMapping("/searchHhaSeries")
+    public List<Miscellaneous> searchMiscellaneousByHhaSeries(@RequestParam(required = false) String hhaSeries) {
+        return miscellaneousService.searchMiscellaneousByHhaSeries(hhaSeries);
+    }
+
+    @GetMapping("/searchHhaSet")
+    public List<Miscellaneous> searchMiscellaneousByHhaSet(@RequestParam(required = false) String hhaSet) {
+        return miscellaneousService.searchMiscellaneousByHhaSet(hhaSet);
+    }
+
     @GetMapping("/searchInteract")
     public List<Miscellaneous> searchMiscellaneousByInteract(@RequestParam(required = false) String interact) {
         return miscellaneousService.searchMiscellaneousByInteract(interact);
     }
 
+    @GetMapping("/searchTag")
+    public List<Miscellaneous> searchMiscellaneousByTag(@RequestParam(required = false) String tag) {
+        return miscellaneousService.searchMiscellaneousByTag(tag);
+    }
+
     @GetMapping("/searchOutdoor")
     public List<Miscellaneous> searchMiscellaneousByOutdoor(@RequestParam(required = false) String outdoor) {
         return miscellaneousService.searchMiscellaneousByOutdoor(outdoor);
+    }
+
+    @GetMapping("/searchSpeakerType")
+    public List<Miscellaneous> searchMiscellaneousBySpeakerType(@RequestParam(required = false) String speakerType) {
+        return miscellaneousService.searchMiscellaneousBySpeakerType(speakerType);
+    }
+
+    @GetMapping("/searchLightingType")
+    public List<Miscellaneous> searchMiscellaneousByLightingType(@RequestParam(required = false) String lightingType) {
+        return miscellaneousService.searchMiscellaneousByLightingType(lightingType);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Miscellaneous> searchMiscellaneousByCatalog(@RequestParam(required = false) String catalog) {
+        return miscellaneousService.searchMiscellaneousByCatalog(catalog);
     }
 
     @GetMapping("/materials")

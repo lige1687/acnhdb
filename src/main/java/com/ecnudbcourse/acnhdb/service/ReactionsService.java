@@ -24,4 +24,12 @@ public class ReactionsService {
 
     public Reactions getById(Long id) { return reactionsMapper.selectById(id); }
 
+
+    public List<Reactions> searchReactionsBySource(String source) {
+        return reactionsMapper.findBySource(source);
+    }
+
+    public List<Reactions> searchReactionsBySourceNotes(String sourceNotes) {
+        return reactionsMapper.findBySourceNotes(sourceNotes);
+    }
 }

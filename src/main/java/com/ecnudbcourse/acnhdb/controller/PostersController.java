@@ -23,4 +23,19 @@ public class PostersController {
     @GetMapping("/findByName")
     public List<Posters> findByName(@RequestParam String name) { return postersService.findByName(name); }
 
+
+    @GetMapping("/searchColor1")
+    public List<Posters> searchPostersByColor1(@RequestParam(required = false) String color1) {
+        return postersService.searchPostersByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Posters> searchPostersByColor2(@RequestParam(required = false) String color2) {
+        return postersService.searchPostersByColor2(color2);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Posters> searchPostersBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return postersService.searchPostersBySourceNotes(sourceNotes);
+    }
 }

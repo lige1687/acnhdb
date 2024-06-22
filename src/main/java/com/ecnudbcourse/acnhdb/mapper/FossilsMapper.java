@@ -33,6 +33,18 @@ public interface FossilsMapper extends BaseMapper<Fossils> {
             "</script>")
     List<Fossils> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM fossils WHERE interact = #{interact}")
+    @Select("SELECT * FROM fossils WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Fossils> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM fossils WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Fossils> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM fossils WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<Fossils> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM fossils WHERE Museum LIKE CONCAT('%', #{museum}, '%')")
+    List<Fossils> findByMuseum(@Param("museum") String museum);
+
+    @Select("SELECT * FROM fossils WHERE Interact LIKE CONCAT('%', #{interact}, '%')")
     List<Fossils> findByInteract(@Param("interact") String interact);
 }

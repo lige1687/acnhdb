@@ -2,8 +2,10 @@ package com.ecnudbcourse.acnhdb.controller;
 
 import com.ecnudbcourse.acnhdb.entity.Fish;
 import com.ecnudbcourse.acnhdb.entity.Insects;
+import com.ecnudbcourse.acnhdb.entity.SeaCreatures;
 import com.ecnudbcourse.acnhdb.service.FishService;
 import com.ecnudbcourse.acnhdb.service.InsectsService;
+import com.ecnudbcourse.acnhdb.service.SeaCreaturesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,17 +32,22 @@ public class ActivityController {
     @Autowired
     private InsectsService insectsService;
 
+    @Autowired
+    private  SeaCreaturesService seaCreaturesService;
 
-    @GetMapping("/active") public ResponseEntity<Map<String, List<?>>> getActiveCreatures(@RequestParam String month, @RequestParam int hour) {
+
+    @GetMapping("/active") public ResponseEntity<Map<String, List<?>>> getActiveCreatures(@RequestParam String hem, @RequestParam String month, @RequestParam int hour) {
         try {
             System.out.println("Month: " + month + ", Hour: " + hour);  // 打印传入参数
-            List<Fish> activeFish = fishService.findActiveFish("NH_" + month, hour);
+            List<Fish> activeFish = fishService.findActiveFish(hem + "_" + month, hour);
             System.out.println("Active Fish: " + activeFish.size());  // 打印返回的活跃鱼的数据大小
-            List<Insects> activeInsects = insectsService.findActiveInsects("NH_" + month, hour);
+            List<Insects> activeInsects = insectsService.findActiveInsects(hem + "_" + month, hour);
+            List<SeaCreatures> activeSeaCreatures = seaCreaturesService.findActiveSeaCreatures(hem + "_" + month, hour);
 
             Map<String, List<?>> activeCreatures = new HashMap<>();
             activeCreatures.put("fish", activeFish);
             activeCreatures.put("insects", activeInsects);
+            activeCreatures.put("seaCreatures", activeSeaCreatures);
             return new ResponseEntity<>(activeCreatures, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();  // 记录详细的异常信息

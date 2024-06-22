@@ -36,4 +36,9 @@ public class FencingController {
 
         return fencingService.searchFencingBySellRangeAndSort(min, max, sort);
     }
+
+    @GetMapping("/searchSource")
+    public List<Fencing> searchFencingBySource(@RequestParam(required = false) String source) {
+        return fencingService.searchFencingBySource(source);
+    }
 }

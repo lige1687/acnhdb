@@ -51,9 +51,59 @@ public class BottomsController {
         return bottomsService.searchBottomsBySellRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Bottoms> searchBottomsByVariation(@RequestParam(required = false) String variation) {
+        return bottomsService.searchBottomsByVariation(variation);
+    }
+
     @GetMapping("/searchDiy")
     public List<Bottoms> searchBottomsByDiy(@RequestParam(required = false) String diy) {
         return bottomsService.searchBottomsByDiy(diy);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Bottoms> searchBottomsByColor1(@RequestParam(required = false) String color1) {
+        return bottomsService.searchBottomsByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Bottoms> searchBottomsByColor2(@RequestParam(required = false) String color2) {
+        return bottomsService.searchBottomsByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Bottoms> searchBottomsBySource(@RequestParam(required = false) String source) {
+        return bottomsService.searchBottomsBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Bottoms> searchBottomsBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return bottomsService.searchBottomsBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchSeasonalAvailability")
+    public List<Bottoms> searchBottomsBySeasonalAvailability(@RequestParam(required = false) String seasonalAvailability) {
+        return bottomsService.searchBottomsBySeasonalAvailability(seasonalAvailability);
+    }
+
+    @GetMapping("/searchMannequinPiece")
+    public List<Bottoms> searchBottomsByMannequinPiece(@RequestParam(required = false) String mannequinPiece) {
+        return bottomsService.searchBottomsByMannequinPiece(mannequinPiece);
+    }
+
+    @GetMapping("/searchStyle")
+    public List<Bottoms> searchBottomsByStyle(@RequestParam(required = false) String style) {
+        return bottomsService.searchBottomsByStyle(style);
+    }
+
+    @GetMapping("/searchLabelThemes")
+    public List<Bottoms> searchBottomsByLabelThemes(@RequestParam(required = false) String labelThemes) {
+        return bottomsService.searchBottomsByLabelThemes(labelThemes);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Bottoms> searchBottomsByCatalog(@RequestParam(required = false) String catalog) {
+        return bottomsService.searchBottomsByCatalog(catalog);
     }
 
     @GetMapping("/materials")

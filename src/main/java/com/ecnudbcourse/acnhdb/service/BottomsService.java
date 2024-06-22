@@ -36,8 +36,48 @@ public class BottomsService {
         return bottomsMapper.searchBySellRangeAndSort(min, max, sort);
     }
 
+    public List<Bottoms> searchBottomsByVariation(String variation) {
+        return bottomsMapper.findByVariation(variation);
+    }
+
     public List<Bottoms> searchBottomsByDiy(String diy) {
         return bottomsMapper.findByDiy(diy);
+    }
+
+    public List<Bottoms> searchBottomsByColor1(String color1) {
+        return bottomsMapper.findByColor1(color1);
+    }
+
+    public List<Bottoms> searchBottomsByColor2(String color2) {
+        return bottomsMapper.findByColor2(color2);
+    }
+
+    public List<Bottoms> searchBottomsBySource(String source) {
+        return bottomsMapper.findBySource(source);
+    }
+
+    public List<Bottoms> searchBottomsBySourceNotes(String sourceNotes) {
+        return bottomsMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Bottoms> searchBottomsBySeasonalAvailability(String seasonalAvailability) {
+        return bottomsMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Bottoms> searchBottomsByMannequinPiece(String mannequinPiece) {
+        return bottomsMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Bottoms> searchBottomsByStyle(String style) {
+        return bottomsMapper.findByStyle(style);
+    }
+
+    public List<Bottoms> searchBottomsByLabelThemes(String labelThemes) {
+        return bottomsMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Bottoms> searchBottomsByCatalog(String catalog) {
+        return bottomsMapper.findByCatalog(catalog);
     }
 
     public List<BottomsMaterials> getBottomsMaterialsByName(String name) {

@@ -26,4 +26,15 @@ public interface FishMapper extends BaseMapper<Fish> {
 
     @Select("SELECT * FROM fish")
     List<Fish> findAllFish();
+
+    @Select("<script>" +
+            "SELECT * FROM fish" +
+            " WHERE 1=1 AND sell != 0" +
+            "<if test='min != null'> AND sell &gt;= #{min}</if>" +
+            "<if test='max != null'> AND sell &lt;= #{max}</if>" +
+            "<if test='sort != null'>" +
+            " ORDER BY sell ${sort}" +
+            "</if>" +
+            "</script>")
+    List<Fish> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 }

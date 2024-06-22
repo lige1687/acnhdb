@@ -37,6 +37,26 @@ public class FossilsController {
         return fossilsService.searchFossilsBySellRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchColor1")
+    public List<Fossils> searchFossilsByColor1(@RequestParam(required = false) String color1) {
+        return fossilsService.searchFossilsByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Fossils> searchFossilsByColor2(@RequestParam(required = false) String color2) {
+        return fossilsService.searchFossilsByColor2(color2);
+    }
+
+    @GetMapping("/searchSize")
+    public List<Fossils> searchFossilsBySize(@RequestParam(required = false) String size) {
+        return fossilsService.searchFossilsBySize(size);
+    }
+
+    @GetMapping("/searchMuseum")
+    public List<Fossils> searchFossilsByMuseum(@RequestParam(required = false) String museum) {
+        return fossilsService.searchFossilsByMuseum(museum);
+    }
+
     @GetMapping("/searchInteract")
     public List<Fossils> searchFossilsByInteract(@RequestParam(required = false) String interact) {
         return fossilsService.searchFossilsByInteract(interact);

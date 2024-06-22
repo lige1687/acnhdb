@@ -56,8 +56,38 @@ public interface TopsMapper extends BaseMapper<Tops> {
             "</script>")
     List<Tops> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM tops WHERE diy = #{diy}")
+    @Select("SELECT * FROM tops WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Tops> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM tops WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Tops> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM tops WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Tops> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM tops WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Tops> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM tops WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Tops> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM tops WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Tops> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM tops WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Tops> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM tops WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Tops> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM tops WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Tops> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM tops WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Tops> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM tops WHERE Catalog = #{catalog}")
+    List<Tops> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

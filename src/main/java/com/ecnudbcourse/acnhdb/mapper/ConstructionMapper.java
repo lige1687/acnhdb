@@ -32,4 +32,10 @@ public interface ConstructionMapper extends BaseMapper<Construction> {
             "</if>" +
             "</script>")
     List<Construction> searchByBuyRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("SELECT * FROM construction WHERE Category LIKE CONCAT('%', #{category}, '%')")
+    List<Construction> findByCategory(@Param("category") String category);
+
+    @Select("SELECT * FROM construction WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Construction> findBySource(@Param("source") String source);
 }

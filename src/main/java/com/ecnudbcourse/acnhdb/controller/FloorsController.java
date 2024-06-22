@@ -64,14 +64,54 @@ public class FloorsController {
         return floorsService.searchFloorsByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVfx")
+    public List<Floors> searchFloorsByVfx(@RequestParam(required = false) String vfx) {
+        return floorsService.searchFloorsByVfx(vfx);
+    }
+
     @GetMapping("/searchDiy")
     public List<Floors> searchFloorsByDiy(@RequestParam(required = false) String diy) {
         return floorsService.searchFloorsByDiy(diy);
     }
 
-    @GetMapping("/searchVfx")
-    public List<Floors> searchFloorsByVfx(@RequestParam(required = false) String vfx) {
-        return floorsService.searchFloorsByVfx(vfx);
+    @GetMapping("/searchColor1")
+    public List<Floors> searchFloorsByColor1(@RequestParam(required = false) String color1) {
+        return floorsService.searchFloorsByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Floors> searchFloorsByColor2(@RequestParam(required = false) String color2) {
+        return floorsService.searchFloorsByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Floors> searchFloorsBySource(@RequestParam(required = false) String source) {
+        return floorsService.searchFloorsBySource(source);
+    }
+
+    @GetMapping("/searchHhaConcept1")
+    public List<Floors> searchFloorsByHhaConcept1(@RequestParam(required = false) String hhaConcept1) {
+        return floorsService.searchFloorsByHhaConcept1(hhaConcept1);
+    }
+
+    @GetMapping("/searchHhaConcept2")
+    public List<Floors> searchFloorsByHhaConcept2(@RequestParam(required = false) String hhaConcept2) {
+        return floorsService.searchFloorsByHhaConcept2(hhaConcept2);
+    }
+
+    @GetMapping("/searchHhaSeries")
+    public List<Floors> searchFloorsByHhaSeries(@RequestParam(required = false) String hhaSeries) {
+        return floorsService.searchFloorsByHhaSeries(hhaSeries);
+    }
+
+    @GetMapping("/searchTag")
+    public List<Floors> searchFloorsByTag(@RequestParam(required = false) String tag) {
+        return floorsService.searchFloorsByTag(tag);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Floors> searchFloorsByCatalog(@RequestParam(required = false) String catalog) {
+        return floorsService.searchFloorsByCatalog(catalog);
     }
 
     @GetMapping("/materials")

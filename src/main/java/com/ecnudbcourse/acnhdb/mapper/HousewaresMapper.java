@@ -67,20 +67,68 @@ public interface HousewaresMapper extends BaseMapper<Housewares> {
             "</script>")
     List<Housewares> searchByKitCostRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM housewares WHERE diy = #{diy}")
+    @Select("SELECT * FROM housewares WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Housewares> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM housewares WHERE Body_Title LIKE CONCAT('%', #{bodyTitle}, '%')")
+    List<Housewares> findByBodyTitle(@Param("bodyTitle") String bodyTitle);
+
+    @Select("SELECT * FROM housewares WHERE Pattern LIKE CONCAT('%', #{pattern}, '%')")
+    List<Housewares> findByPattern(@Param("pattern") String pattern);
+
+    @Select("SELECT * FROM housewares WHERE Pattern_Title LIKE CONCAT('%', #{patternTitle}, '%')")
+    List<Housewares> findByPatternTitle(@Param("patternTitle") String patternTitle);
+
+    @Select("SELECT * FROM housewares WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Housewares> findByDiy(@Param("diy") String diy);
 
-    @Select("SELECT * FROM housewares WHERE body_customize = #{bodyCustomize}")
+    @Select("SELECT * FROM housewares WHERE Body_Customize LIKE CONCAT('%', #{bodyCustomize}, '%')")
     List<Housewares> findByBodyCustomize(@Param("bodyCustomize") String bodyCustomize);
 
-    @Select("SELECT * FROM housewares WHERE pattern_customize = #{patternCustomize}")
+    @Select("SELECT * FROM housewares WHERE Pattern_Customize LIKE CONCAT('%', #{patternCustomize}, '%')")
     List<Housewares> findByPatternCustomize(@Param("patternCustomize") String patternCustomize);
 
-    @Select("SELECT * FROM housewares WHERE interact = #{interact}")
+    @Select("SELECT * FROM housewares WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Housewares> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM housewares WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Housewares> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM housewares WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<Housewares> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM housewares WHERE Interact LIKE CONCAT('%', #{interact}, '%')")
     List<Housewares> findByInteract(@Param("interact") String interact);
 
-    @Select("SELECT * FROM housewares WHERE outdoor = #{outdoor}")
+    @Select("SELECT * FROM housewares WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Housewares> findByTag(@Param("tag") String tag);
+
+    @Select("SELECT * FROM housewares WHERE Outdoor LIKE CONCAT('%', #{outdoor}, '%')")
     List<Housewares> findByOutdoor(@Param("outdoor") String outdoor);
+
+    @Select("SELECT * FROM housewares WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Housewares> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM housewares WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Housewares> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM housewares WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<Housewares> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM housewares WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<Housewares> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM housewares WHERE HHA_Series LIKE CONCAT('%', #{hhaSeries}, '%')")
+    List<Housewares> findByHhaSeries(@Param("hhaSeries") String hhaSeries);
+
+    @Select("SELECT * FROM housewares WHERE HHA_Set LIKE CONCAT('%', #{hhaSet}, '%')")
+    List<Housewares> findByHhaSet(@Param("hhaSet") String hhaSet);
+
+    @Select("SELECT * FROM housewares WHERE Speaker_Type LIKE CONCAT('%', #{speakerType}, '%')")
+    List<Housewares> findBySpeakerType(@Param("speakerType") String speakerType);
+
+    @Select("SELECT * FROM housewares WHERE Lighting_Type LIKE CONCAT('%', #{lightingType}, '%')")
+    List<Housewares> findByLightingType(@Param("lightingType") String lightingType);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

@@ -51,9 +51,69 @@ public class DressUpController {
         return dress_upService.searchDressUpBySellRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<DressUp> searchDressUpByVariation(@RequestParam(required = false) String variation) {
+        return dress_upService.searchDressUpByVariation(variation);
+    }
+
     @GetMapping("/searchDiy")
     public List<DressUp> searchDressUpByDiy(@RequestParam(required = false) String diy) {
         return dress_upService.searchDressUpByDiy(diy);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<DressUp> searchDressUpByColor1(@RequestParam(required = false) String color1) {
+        return dress_upService.searchDressUpByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<DressUp> searchDressUpByColor2(@RequestParam(required = false) String color2) {
+        return dress_upService.searchDressUpByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<DressUp> searchDressUpBySource(@RequestParam(required = false) String source) {
+        return dress_upService.searchDressUpBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<DressUp> searchDressUpBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return dress_upService.searchDressUpBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchSeasonalAvailability")
+    public List<DressUp> searchDressUpBySeasonalAvailability(@RequestParam(required = false) String seasonalAvailability) {
+        return dress_upService.searchDressUpBySeasonalAvailability(seasonalAvailability);
+    }
+
+    @GetMapping("/searchMannequinPiece")
+    public List<DressUp> searchDressUpByMannequinPiece(@RequestParam(required = false) String mannequinPiece) {
+        return dress_upService.searchDressUpByMannequinPiece(mannequinPiece);
+    }
+
+    @GetMapping("/searchStyle")
+    public List<DressUp> searchDressUpByStyle(@RequestParam(required = false) String style) {
+        return dress_upService.searchDressUpByStyle(style);
+    }
+
+    @GetMapping("/searchLabelThemes")
+    public List<DressUp> searchDressUpByLabelThemes(@RequestParam(required = false) String labelThemes) {
+        return dress_upService.searchDressUpByLabelThemes(labelThemes);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<DressUp> searchDressUpByCatalog(@RequestParam(required = false) String catalog) {
+        return dress_upService.searchDressUpByCatalog(catalog);
+    }
+
+    @GetMapping("/searchPrimaryShape")
+    public List<DressUp> searchDressUpByPrimaryShape(@RequestParam(required = false) String primaryShape) {
+        return dress_upService.searchDressUpByPrimaryShape(primaryShape);
+    }
+
+    @GetMapping("/searchSecondaryShape")
+    public List<DressUp> searchDressUpBySecondaryShape(@RequestParam(required = false) String secondaryShape) {
+        return dress_upService.searchDressUpBySecondaryShape(secondaryShape);
     }
 
     @GetMapping("/materials")

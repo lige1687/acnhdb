@@ -24,4 +24,20 @@ public class ParadisePlanningService {
 
     public ParadisePlanning getById(Long id) { return paradise_planningMapper.selectById(id); }
 
+
+    public List<ParadisePlanning> searchParadisePlanningByRequest(String request) {
+        return paradise_planningMapper.findByRequest(request);
+    }
+
+    public List<ParadisePlanning> searchParadisePlanningByThoughtBubble(String thoughtBubble) {
+        return paradise_planningMapper.findByThoughtBubble(thoughtBubble);
+    }
+
+    public List<ParadisePlanning> searchParadisePlanningBySong(String song) {
+        return paradise_planningMapper.findBySong(song);
+    }
+
+    public List<ParadisePlanning> searchParadisePlanningByFurnitureNameList(String furnitureNameList) {
+        return paradise_planningMapper.findByFurnitureNameList(furnitureNameList);
+    }
 }

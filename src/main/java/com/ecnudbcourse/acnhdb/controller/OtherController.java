@@ -69,6 +69,36 @@ public class OtherController {
         return otherService.searchOtherByDiy(diy);
     }
 
+    @GetMapping("/searchStackSize")
+    public List<Other> searchOtherByStackSize(@RequestParam(required = false) String stackSize) {
+        return otherService.searchOtherByStackSize(stackSize);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Other> searchOtherBySource(@RequestParam(required = false) String source) {
+        return otherService.searchOtherBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Other> searchOtherBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return otherService.searchOtherBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchTag")
+    public List<Other> searchOtherByTag(@RequestParam(required = false) String tag) {
+        return otherService.searchOtherByTag(tag);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Other> searchOtherByColor1(@RequestParam(required = false) String color1) {
+        return otherService.searchOtherByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Other> searchOtherByColor2(@RequestParam(required = false) String color2) {
+        return otherService.searchOtherByColor2(color2);
+    }
+
     @GetMapping("/materials")
     public List<OtherMaterials> getOtherMaterialsByName(@RequestParam String name) {
         return otherService.getOtherMaterialsByName(name);

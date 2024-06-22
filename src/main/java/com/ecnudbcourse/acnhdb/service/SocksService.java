@@ -36,4 +36,44 @@ public class SocksService {
     public List<Socks> searchSocksByMilesPriceRangeAndSort(Integer min, Integer max, String sort) {
         return socksMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
+
+    public List<Socks> searchSocksByVariation(String variation) {
+        return socksMapper.findByVariation(variation);
+    }
+
+    public List<Socks> searchSocksByColor1(String color1) {
+        return socksMapper.findByColor1(color1);
+    }
+
+    public List<Socks> searchSocksByColor2(String color2) {
+        return socksMapper.findByColor2(color2);
+    }
+
+    public List<Socks> searchSocksBySource(String source) {
+        return socksMapper.findBySource(source);
+    }
+
+    public List<Socks> searchSocksBySourceNotes(String sourceNotes) {
+        return socksMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Socks> searchSocksBySeasonalAvailability(String seasonalAvailability) {
+        return socksMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Socks> searchSocksByMannequinPiece(String mannequinPiece) {
+        return socksMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Socks> searchSocksByStyle(String style) {
+        return socksMapper.findByStyle(style);
+    }
+
+    public List<Socks> searchSocksByLabelThemes(String labelThemes) {
+        return socksMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Socks> searchSocksByCatalog(String catalog) {
+        return socksMapper.findByCatalog(catalog);
+    }
 }

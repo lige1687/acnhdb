@@ -56,8 +56,44 @@ public interface HeadwearMapper extends BaseMapper<Headwear> {
             "</script>")
     List<Headwear> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM headwear WHERE diy = #{diy}")
+    @Select("SELECT * FROM headwear WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Headwear> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM headwear WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Headwear> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM headwear WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Headwear> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM headwear WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Headwear> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM headwear WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Headwear> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM headwear WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Headwear> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM headwear WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Headwear> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM headwear WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Headwear> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM headwear WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Headwear> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM headwear WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Headwear> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM headwear WHERE Type LIKE CONCAT('%', #{type}, '%')")
+    List<Headwear> findByType(@Param("type") String type);
+
+    @Select("SELECT * FROM headwear WHERE Villager_Equippable LIKE CONCAT('%', #{villagerEquippable}, '%')")
+    List<Headwear> findByVillagerEquippable(@Param("villagerEquippable") String villagerEquippable);
+
+    @Select("SELECT * FROM headwear WHERE Catalog = #{catalog}")
+    List<Headwear> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

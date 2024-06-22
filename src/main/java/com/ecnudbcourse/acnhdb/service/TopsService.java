@@ -40,8 +40,48 @@ public class TopsService {
         return topsMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    public List<Tops> searchTopsByVariation(String variation) {
+        return topsMapper.findByVariation(variation);
+    }
+
     public List<Tops> searchTopsByDiy(String diy) {
         return topsMapper.findByDiy(diy);
+    }
+
+    public List<Tops> searchTopsByColor1(String color1) {
+        return topsMapper.findByColor1(color1);
+    }
+
+    public List<Tops> searchTopsByColor2(String color2) {
+        return topsMapper.findByColor2(color2);
+    }
+
+    public List<Tops> searchTopsBySource(String source) {
+        return topsMapper.findBySource(source);
+    }
+
+    public List<Tops> searchTopsBySourceNotes(String sourceNotes) {
+        return topsMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Tops> searchTopsBySeasonalAvailability(String seasonalAvailability) {
+        return topsMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Tops> searchTopsByMannequinPiece(String mannequinPiece) {
+        return topsMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Tops> searchTopsByStyle(String style) {
+        return topsMapper.findByStyle(style);
+    }
+
+    public List<Tops> searchTopsByLabelThemes(String labelThemes) {
+        return topsMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Tops> searchTopsByCatalog(String catalog) {
+        return topsMapper.findByCatalog(catalog);
     }
 
     public List<TopsMaterials> getTopsMaterialsByName(String name) {

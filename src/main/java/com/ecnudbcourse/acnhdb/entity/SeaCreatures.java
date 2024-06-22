@@ -43,4 +43,34 @@ public class SeaCreatures {
     private String shDec;
     private String surface;
     private String lightingType;
+
+    public String getTimeRange(String month) {
+        switch (month) {
+            case "NH_Jan": return nhJan;
+            case "NH_Feb": return nhFeb;
+            case "NH_Mar": return nhMar;
+            case "NH_Apr": return nhApr;
+            case "NH_May": return nhMay;
+            case "NH_Jun": return nhJun;
+            case "NH_Jul": return nhJul;
+            case "NH_Aug": return nhAug;
+            case "NH_Sep": return nhSep;
+            case "NH_Oct": return nhOct;
+            case "NH_Nov": return nhNov;
+            case "NH_Dec": return nhDec;
+            case "SH_Jan": return shJan;
+            case "SH_Feb": return shFeb;
+            case "SH_Mar": return shMar;
+            case "SH_Apr": return shApr;
+            case "SH_May": return shMay;
+            case "SH_Jun": return shJun;
+            case "SH_Jul": return shJul;
+            case "SH_Aug": return shAug;
+            case "SH_Sep": return shSep;
+            case "SH_Oct": return shOct;
+            case "SH_Nov": return shNov;
+            case "SH_Dec": return shDec;
+            default: return null;
+        }
+    }
 }

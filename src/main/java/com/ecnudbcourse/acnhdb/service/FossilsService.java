@@ -29,6 +29,22 @@ public class FossilsService {
         return fossilsMapper.searchBySellRangeAndSort(min, max, sort);
     }
 
+    public List<Fossils> searchFossilsByColor1(String color1) {
+        return fossilsMapper.findByColor1(color1);
+    }
+
+    public List<Fossils> searchFossilsByColor2(String color2) {
+        return fossilsMapper.findByColor2(color2);
+    }
+
+    public List<Fossils> searchFossilsBySize(String size) {
+        return fossilsMapper.findBySize(size);
+    }
+
+    public List<Fossils> searchFossilsByMuseum(String museum) {
+        return fossilsMapper.findByMuseum(museum);
+    }
+
     public List<Fossils> searchFossilsByInteract(String interact) {
         return fossilsMapper.findByInteract(interact);
     }

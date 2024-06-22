@@ -64,9 +64,69 @@ public class HeadwearController {
         return headwearService.searchHeadwearByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Headwear> searchHeadwearByVariation(@RequestParam(required = false) String variation) {
+        return headwearService.searchHeadwearByVariation(variation);
+    }
+
     @GetMapping("/searchDiy")
     public List<Headwear> searchHeadwearByDiy(@RequestParam(required = false) String diy) {
         return headwearService.searchHeadwearByDiy(diy);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Headwear> searchHeadwearByColor1(@RequestParam(required = false) String color1) {
+        return headwearService.searchHeadwearByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Headwear> searchHeadwearByColor2(@RequestParam(required = false) String color2) {
+        return headwearService.searchHeadwearByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Headwear> searchHeadwearBySource(@RequestParam(required = false) String source) {
+        return headwearService.searchHeadwearBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Headwear> searchHeadwearBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return headwearService.searchHeadwearBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchSeasonalAvailability")
+    public List<Headwear> searchHeadwearBySeasonalAvailability(@RequestParam(required = false) String seasonalAvailability) {
+        return headwearService.searchHeadwearBySeasonalAvailability(seasonalAvailability);
+    }
+
+    @GetMapping("/searchMannequinPiece")
+    public List<Headwear> searchHeadwearByMannequinPiece(@RequestParam(required = false) String mannequinPiece) {
+        return headwearService.searchHeadwearByMannequinPiece(mannequinPiece);
+    }
+
+    @GetMapping("/searchStyle")
+    public List<Headwear> searchHeadwearByStyle(@RequestParam(required = false) String style) {
+        return headwearService.searchHeadwearByStyle(style);
+    }
+
+    @GetMapping("/searchLabelThemes")
+    public List<Headwear> searchHeadwearByLabelThemes(@RequestParam(required = false) String labelThemes) {
+        return headwearService.searchHeadwearByLabelThemes(labelThemes);
+    }
+
+    @GetMapping("/searchType")
+    public List<Headwear> searchHeadwearByType(@RequestParam(required = false) String type) {
+        return headwearService.searchHeadwearByType(type);
+    }
+
+    @GetMapping("/searchVillagerEquippable")
+    public List<Headwear> searchHeadwearByVillagerEquippable(@RequestParam(required = false) String villagerEquippable) {
+        return headwearService.searchHeadwearByVillagerEquippable(villagerEquippable);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Headwear> searchHeadwearByCatalog(@RequestParam(required = false) String catalog) {
+        return headwearService.searchHeadwearByCatalog(catalog);
     }
 
     @GetMapping("/materials")

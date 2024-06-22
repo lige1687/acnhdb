@@ -21,4 +21,13 @@ public interface PhotosMapper extends BaseMapper<Photos> {
     @Delete("DELETE FROM photos WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("SELECT * FROM photos WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Photos> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM photos WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Photos> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM photos WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Photos> findByColor2(@Param("color2") String color2);
 }

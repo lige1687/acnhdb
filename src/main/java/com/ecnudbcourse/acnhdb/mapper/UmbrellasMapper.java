@@ -56,8 +56,23 @@ public interface UmbrellasMapper extends BaseMapper<Umbrellas> {
             "</script>")
     List<Umbrellas> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM umbrellas WHERE diy = #{diy}")
+    @Select("SELECT * FROM umbrellas WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Umbrellas> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM umbrellas WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Umbrellas> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM umbrellas WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Umbrellas> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM umbrellas WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Umbrellas> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM umbrellas WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Umbrellas> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM umbrellas WHERE Catalog = #{catalog}")
+    List<Umbrellas> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

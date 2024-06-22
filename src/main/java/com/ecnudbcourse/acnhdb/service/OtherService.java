@@ -44,6 +44,30 @@ public class OtherService {
         return otherMapper.findByDiy(diy);
     }
 
+    public List<Other> searchOtherByStackSize(String stackSize) {
+        return otherMapper.findByStackSize(stackSize);
+    }
+
+    public List<Other> searchOtherBySource(String source) {
+        return otherMapper.findBySource(source);
+    }
+
+    public List<Other> searchOtherBySourceNotes(String sourceNotes) {
+        return otherMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Other> searchOtherByTag(String tag) {
+        return otherMapper.findByTag(tag);
+    }
+
+    public List<Other> searchOtherByColor1(String color1) {
+        return otherMapper.findByColor1(color1);
+    }
+
+    public List<Other> searchOtherByColor2(String color2) {
+        return otherMapper.findByColor2(color2);
+    }
+
     public List<OtherMaterials> getOtherMaterialsByName(String name) {
         List<OtherMaterials> materials = otherMapper.selectOtherMaterialsByName(name);
         Set<OtherMaterials> uniqueMaterials = materials.stream().collect(Collectors.toSet());

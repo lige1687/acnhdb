@@ -21,6 +21,9 @@ public interface SeaCreaturesMapper extends BaseMapper<SeaCreatures> {
     @Delete("DELETE FROM sea_creatures WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+    @Select("SELECT * FROM sea_creatures")
+    List<SeaCreatures> findAllSeaCreatures();
+
 
     @Select("<script>" +
             "SELECT * FROM sea_creatures" +

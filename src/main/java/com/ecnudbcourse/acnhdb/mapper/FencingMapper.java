@@ -32,4 +32,7 @@ public interface FencingMapper extends BaseMapper<Fencing> {
             "</if>" +
             "</script>")
     List<Fencing> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("SELECT * FROM fencing WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Fencing> findBySource(@Param("source") String source);
 }

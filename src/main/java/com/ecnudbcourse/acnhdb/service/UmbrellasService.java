@@ -44,6 +44,26 @@ public class UmbrellasService {
         return umbrellasMapper.findByDiy(diy);
     }
 
+    public List<Umbrellas> searchUmbrellasByColor1(String color1) {
+        return umbrellasMapper.findByColor1(color1);
+    }
+
+    public List<Umbrellas> searchUmbrellasByColor2(String color2) {
+        return umbrellasMapper.findByColor2(color2);
+    }
+
+    public List<Umbrellas> searchUmbrellasBySource(String source) {
+        return umbrellasMapper.findBySource(source);
+    }
+
+    public List<Umbrellas> searchUmbrellasBySourceNotes(String sourceNotes) {
+        return umbrellasMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Umbrellas> searchUmbrellasByCatalog(String catalog) {
+        return umbrellasMapper.findByCatalog(catalog);
+    }
+
     public List<UmbrellasMaterials> getUmbrellasMaterialsByName(String name) {
         List<UmbrellasMaterials> materials = umbrellasMapper.selectUmbrellasMaterialsByName(name);
         Set<UmbrellasMaterials> uniqueMaterials = materials.stream().collect(Collectors.toSet());

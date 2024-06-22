@@ -36,8 +36,56 @@ public class DressUpService {
         return dress_upMapper.searchBySellRangeAndSort(min, max, sort);
     }
 
+    public List<DressUp> searchDressUpByVariation(String variation) {
+        return dress_upMapper.findByVariation(variation);
+    }
+
     public List<DressUp> searchDressUpByDiy(String diy) {
         return dress_upMapper.findByDiy(diy);
+    }
+
+    public List<DressUp> searchDressUpByColor1(String color1) {
+        return dress_upMapper.findByColor1(color1);
+    }
+
+    public List<DressUp> searchDressUpByColor2(String color2) {
+        return dress_upMapper.findByColor2(color2);
+    }
+
+    public List<DressUp> searchDressUpBySource(String source) {
+        return dress_upMapper.findBySource(source);
+    }
+
+    public List<DressUp> searchDressUpBySourceNotes(String sourceNotes) {
+        return dress_upMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<DressUp> searchDressUpBySeasonalAvailability(String seasonalAvailability) {
+        return dress_upMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<DressUp> searchDressUpByMannequinPiece(String mannequinPiece) {
+        return dress_upMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<DressUp> searchDressUpByStyle(String style) {
+        return dress_upMapper.findByStyle(style);
+    }
+
+    public List<DressUp> searchDressUpByLabelThemes(String labelThemes) {
+        return dress_upMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<DressUp> searchDressUpByCatalog(String catalog) {
+        return dress_upMapper.findByCatalog(catalog);
+    }
+
+    public List<DressUp> searchDressUpByPrimaryShape(String primaryShape) {
+        return dress_upMapper.findByPrimaryShape(primaryShape);
+    }
+
+    public List<DressUp> searchDressUpBySecondaryShape(String secondaryShape) {
+        return dress_upMapper.findBySecondaryShape(secondaryShape);
     }
 
     public List<DressUpMaterials> getDressUpMaterialsByName(String name) {

@@ -56,11 +56,35 @@ public interface FloorsMapper extends BaseMapper<Floors> {
             "</script>")
     List<Floors> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM floors WHERE diy = #{diy}")
+    @Select("SELECT * FROM floors WHERE VFX LIKE CONCAT('%', #{vfx}, '%')")
+    List<Floors> findByVfx(@Param("vfx") String vfx);
+
+    @Select("SELECT * FROM floors WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Floors> findByDiy(@Param("diy") String diy);
 
-    @Select("SELECT * FROM floors WHERE vfx = #{vfx}")
-    List<Floors> findByVfx(@Param("vfx") String vfx);
+    @Select("SELECT * FROM floors WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Floors> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM floors WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Floors> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM floors WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Floors> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM floors WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<Floors> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM floors WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<Floors> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM floors WHERE HHA_Series LIKE CONCAT('%', #{hhaSeries}, '%')")
+    List<Floors> findByHhaSeries(@Param("hhaSeries") String hhaSeries);
+
+    @Select("SELECT * FROM floors WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Floors> findByTag(@Param("tag") String tag);
+
+    @Select("SELECT * FROM floors WHERE Catalog = #{catalog}")
+    List<Floors> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

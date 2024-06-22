@@ -54,4 +54,44 @@ public class ArtController {
     public List<Art> searchArtByGenuine(@RequestParam(required = false) String genuine) {
         return artService.searchArtByGenuine(genuine);
     }
+
+    @GetMapping("/searchCategory")
+    public List<Art> searchArtByCategory(@RequestParam(required = false) String category) {
+        return artService.searchArtByCategory(category);
+    }
+
+    @GetMapping("/searchSize")
+    public List<Art> searchArtBySize(@RequestParam(required = false) String size) {
+        return artService.searchArtBySize(size);
+    }
+
+    @GetMapping("/searchRealArtworkTitle")
+    public List<Art> searchArtByRealArtworkTitle(@RequestParam(required = false) String realArtworkTitle) {
+        return artService.searchArtByRealArtworkTitle(realArtworkTitle);
+    }
+
+    @GetMapping("/searchArtist")
+    public List<Art> searchArtByArtist(@RequestParam(required = false) String artist) {
+        return artService.searchArtByArtist(artist);
+    }
+
+    @GetMapping("/searchMuseumDescription")
+    public List<Art> searchArtByMuseumDescription(@RequestParam(required = false) String museumDescription) {
+        return artService.searchArtByMuseumDescription(museumDescription);
+    }
+
+    @GetMapping("/searchHhaConcept1")
+    public List<Art> searchArtByHhaConcept1(@RequestParam(required = false) String hhaConcept1) {
+        return artService.searchArtByHhaConcept1(hhaConcept1);
+    }
+
+    @GetMapping("/searchHhaConcept2")
+    public List<Art> searchArtByHhaConcept2(@RequestParam(required = false) String hhaConcept2) {
+        return artService.searchArtByHhaConcept2(hhaConcept2);
+    }
+
+    @GetMapping("/searchTag")
+    public List<Art> searchArtByTag(@RequestParam(required = false) String tag) {
+        return artService.searchArtByTag(tag);
+    }
 }

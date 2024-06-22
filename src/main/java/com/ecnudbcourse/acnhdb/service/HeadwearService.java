@@ -40,8 +40,56 @@ public class HeadwearService {
         return headwearMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    public List<Headwear> searchHeadwearByVariation(String variation) {
+        return headwearMapper.findByVariation(variation);
+    }
+
     public List<Headwear> searchHeadwearByDiy(String diy) {
         return headwearMapper.findByDiy(diy);
+    }
+
+    public List<Headwear> searchHeadwearByColor1(String color1) {
+        return headwearMapper.findByColor1(color1);
+    }
+
+    public List<Headwear> searchHeadwearByColor2(String color2) {
+        return headwearMapper.findByColor2(color2);
+    }
+
+    public List<Headwear> searchHeadwearBySource(String source) {
+        return headwearMapper.findBySource(source);
+    }
+
+    public List<Headwear> searchHeadwearBySourceNotes(String sourceNotes) {
+        return headwearMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Headwear> searchHeadwearBySeasonalAvailability(String seasonalAvailability) {
+        return headwearMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Headwear> searchHeadwearByMannequinPiece(String mannequinPiece) {
+        return headwearMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Headwear> searchHeadwearByStyle(String style) {
+        return headwearMapper.findByStyle(style);
+    }
+
+    public List<Headwear> searchHeadwearByLabelThemes(String labelThemes) {
+        return headwearMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Headwear> searchHeadwearByType(String type) {
+        return headwearMapper.findByType(type);
+    }
+
+    public List<Headwear> searchHeadwearByVillagerEquippable(String villagerEquippable) {
+        return headwearMapper.findByVillagerEquippable(villagerEquippable);
+    }
+
+    public List<Headwear> searchHeadwearByCatalog(String catalog) {
+        return headwearMapper.findByCatalog(catalog);
     }
 
     public List<HeadwearMaterials> getHeadwearMaterialsByName(String name) {

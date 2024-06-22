@@ -21,4 +21,13 @@ public interface PostersMapper extends BaseMapper<Posters> {
     @Delete("DELETE FROM posters WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("SELECT * FROM posters WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Posters> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM posters WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Posters> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM posters WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Posters> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
 }

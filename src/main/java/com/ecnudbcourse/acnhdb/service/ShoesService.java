@@ -40,8 +40,48 @@ public class ShoesService {
         return shoesMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    public List<Shoes> searchShoesByVariation(String variation) {
+        return shoesMapper.findByVariation(variation);
+    }
+
     public List<Shoes> searchShoesByDiy(String diy) {
         return shoesMapper.findByDiy(diy);
+    }
+
+    public List<Shoes> searchShoesByColor1(String color1) {
+        return shoesMapper.findByColor1(color1);
+    }
+
+    public List<Shoes> searchShoesByColor2(String color2) {
+        return shoesMapper.findByColor2(color2);
+    }
+
+    public List<Shoes> searchShoesBySource(String source) {
+        return shoesMapper.findBySource(source);
+    }
+
+    public List<Shoes> searchShoesBySourceNotes(String sourceNotes) {
+        return shoesMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Shoes> searchShoesBySeasonalAvailability(String seasonalAvailability) {
+        return shoesMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Shoes> searchShoesByMannequinPiece(String mannequinPiece) {
+        return shoesMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Shoes> searchShoesByStyle(String style) {
+        return shoesMapper.findByStyle(style);
+    }
+
+    public List<Shoes> searchShoesByLabelThemes(String labelThemes) {
+        return shoesMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Shoes> searchShoesByCatalog(String catalog) {
+        return shoesMapper.findByCatalog(catalog);
     }
 
     public List<ShoesMaterials> getShoesMaterialsByName(String name) {

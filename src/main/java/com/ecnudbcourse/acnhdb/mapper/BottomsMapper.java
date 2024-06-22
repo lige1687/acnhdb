@@ -45,8 +45,38 @@ public interface BottomsMapper extends BaseMapper<Bottoms> {
             "</script>")
     List<Bottoms> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM bottoms WHERE diy = #{diy}")
+    @Select("SELECT * FROM bottoms WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Bottoms> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM bottoms WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Bottoms> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM bottoms WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Bottoms> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM bottoms WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Bottoms> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM bottoms WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Bottoms> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM bottoms WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Bottoms> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM bottoms WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Bottoms> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM bottoms WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Bottoms> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM bottoms WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Bottoms> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM bottoms WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Bottoms> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM bottoms WHERE Catalog = #{catalog}")
+    List<Bottoms> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

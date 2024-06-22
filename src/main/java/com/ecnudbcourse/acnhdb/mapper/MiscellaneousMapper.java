@@ -56,20 +56,71 @@ public interface MiscellaneousMapper extends BaseMapper<Miscellaneous> {
             "</script>")
     List<Miscellaneous> searchByKitCostRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM miscellaneous WHERE diy = #{diy}")
+    @Select("SELECT * FROM miscellaneous WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Miscellaneous> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM miscellaneous WHERE Body_Title LIKE CONCAT('%', #{bodyTitle}, '%')")
+    List<Miscellaneous> findByBodyTitle(@Param("bodyTitle") String bodyTitle);
+
+    @Select("SELECT * FROM miscellaneous WHERE Pattern LIKE CONCAT('%', #{pattern}, '%')")
+    List<Miscellaneous> findByPattern(@Param("pattern") String pattern);
+
+    @Select("SELECT * FROM miscellaneous WHERE Pattern_Title LIKE CONCAT('%', #{patternTitle}, '%')")
+    List<Miscellaneous> findByPatternTitle(@Param("patternTitle") String patternTitle);
+
+    @Select("SELECT * FROM miscellaneous WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Miscellaneous> findByDiy(@Param("diy") String diy);
 
-    @Select("SELECT * FROM miscellaneous WHERE body_customize = #{bodyCustomize}")
+    @Select("SELECT * FROM miscellaneous WHERE Body_Customize LIKE CONCAT('%', #{bodyCustomize}, '%')")
     List<Miscellaneous> findByBodyCustomize(@Param("bodyCustomize") String bodyCustomize);
 
-    @Select("SELECT * FROM miscellaneous WHERE pattern_customize = #{patternCustomize}")
+    @Select("SELECT * FROM miscellaneous WHERE Pattern_Customize LIKE CONCAT('%', #{patternCustomize}, '%')")
     List<Miscellaneous> findByPatternCustomize(@Param("patternCustomize") String patternCustomize);
 
-    @Select("SELECT * FROM miscellaneous WHERE interact = #{interact}")
+    @Select("SELECT * FROM miscellaneous WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Miscellaneous> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM miscellaneous WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Miscellaneous> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM miscellaneous WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<Miscellaneous> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM miscellaneous WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Miscellaneous> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM miscellaneous WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Miscellaneous> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM miscellaneous WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<Miscellaneous> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM miscellaneous WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<Miscellaneous> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM miscellaneous WHERE HHA_Series LIKE CONCAT('%', #{hhaSeries}, '%')")
+    List<Miscellaneous> findByHhaSeries(@Param("hhaSeries") String hhaSeries);
+
+    @Select("SELECT * FROM miscellaneous WHERE HHA_Set LIKE CONCAT('%', #{hhaSet}, '%')")
+    List<Miscellaneous> findByHhaSet(@Param("hhaSet") String hhaSet);
+
+    @Select("SELECT * FROM miscellaneous WHERE Interact LIKE CONCAT('%', #{interact}, '%')")
     List<Miscellaneous> findByInteract(@Param("interact") String interact);
 
-    @Select("SELECT * FROM miscellaneous WHERE outdoor = #{outdoor}")
+    @Select("SELECT * FROM miscellaneous WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Miscellaneous> findByTag(@Param("tag") String tag);
+
+    @Select("SELECT * FROM miscellaneous WHERE Outdoor LIKE CONCAT('%', #{outdoor}, '%')")
     List<Miscellaneous> findByOutdoor(@Param("outdoor") String outdoor);
+
+    @Select("SELECT * FROM miscellaneous WHERE Speaker_Type LIKE CONCAT('%', #{speakerType}, '%')")
+    List<Miscellaneous> findBySpeakerType(@Param("speakerType") String speakerType);
+
+    @Select("SELECT * FROM miscellaneous WHERE Lighting_Type LIKE CONCAT('%', #{lightingType}, '%')")
+    List<Miscellaneous> findByLightingType(@Param("lightingType") String lightingType);
+
+    @Select("SELECT * FROM miscellaneous WHERE Catalog = #{catalog}")
+    List<Miscellaneous> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

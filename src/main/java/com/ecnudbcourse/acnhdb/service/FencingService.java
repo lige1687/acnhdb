@@ -28,4 +28,8 @@ public class FencingService {
     public List<Fencing> searchFencingBySellRangeAndSort(Integer min, Integer max, String sort) {
         return fencingMapper.searchBySellRangeAndSort(min, max, sort);
     }
+
+    public List<Fencing> searchFencingBySource(String source) {
+        return fencingMapper.findBySource(source);
+    }
 }

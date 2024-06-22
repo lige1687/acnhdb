@@ -56,8 +56,26 @@ public interface OtherMapper extends BaseMapper<Other> {
             "</script>")
     List<Other> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM other WHERE diy = #{diy}")
+    @Select("SELECT * FROM other WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Other> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM other WHERE Stack_Size LIKE CONCAT('%', #{stackSize}, '%')")
+    List<Other> findByStackSize(@Param("stackSize") String stackSize);
+
+    @Select("SELECT * FROM other WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Other> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM other WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Other> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM other WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Other> findByTag(@Param("tag") String tag);
+
+    @Select("SELECT * FROM other WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Other> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM other WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Other> findByColor2(@Param("color2") String color2);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

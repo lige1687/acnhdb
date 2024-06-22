@@ -21,4 +21,10 @@ public interface ReactionsMapper extends BaseMapper<Reactions> {
     @Delete("DELETE FROM reactions WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("SELECT * FROM reactions WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Reactions> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM reactions WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Reactions> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
 }

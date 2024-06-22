@@ -23,4 +23,24 @@ public class ParadisePlanningController {
     @GetMapping("/findByName")
     public List<ParadisePlanning> findByName(@RequestParam String name) { return paradise_planningService.findByName(name); }
 
+
+    @GetMapping("/searchRequest")
+    public List<ParadisePlanning> searchParadisePlanningByRequest(@RequestParam(required = false) String request) {
+        return paradise_planningService.searchParadisePlanningByRequest(request);
+    }
+
+    @GetMapping("/searchThoughtBubble")
+    public List<ParadisePlanning> searchParadisePlanningByThoughtBubble(@RequestParam(required = false) String thoughtBubble) {
+        return paradise_planningService.searchParadisePlanningByThoughtBubble(thoughtBubble);
+    }
+
+    @GetMapping("/searchSong")
+    public List<ParadisePlanning> searchParadisePlanningBySong(@RequestParam(required = false) String song) {
+        return paradise_planningService.searchParadisePlanningBySong(song);
+    }
+
+    @GetMapping("/searchFurnitureNameList")
+    public List<ParadisePlanning> searchParadisePlanningByFurnitureNameList(@RequestParam(required = false) String furnitureNameList) {
+        return paradise_planningService.searchParadisePlanningByFurnitureNameList(furnitureNameList);
+    }
 }

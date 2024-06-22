@@ -40,8 +40,36 @@ public class BagsService {
         return bagsMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    public List<Bags> searchBagsByVariation(String variation) {
+        return bagsMapper.findByVariation(variation);
+    }
+
     public List<Bags> searchBagsByDiy(String diy) {
         return bagsMapper.findByDiy(diy);
+    }
+
+    public List<Bags> searchBagsByColor1(String color1) {
+        return bagsMapper.findByColor1(color1);
+    }
+
+    public List<Bags> searchBagsByColor2(String color2) {
+        return bagsMapper.findByColor2(color2);
+    }
+
+    public List<Bags> searchBagsBySource(String source) {
+        return bagsMapper.findBySource(source);
+    }
+
+    public List<Bags> searchBagsByStyle(String style) {
+        return bagsMapper.findByStyle(style);
+    }
+
+    public List<Bags> searchBagsByLabelThemes(String labelThemes) {
+        return bagsMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Bags> searchBagsByCatalog(String catalog) {
+        return bagsMapper.findByCatalog(catalog);
     }
 
     public List<BagsMaterials> getBagsMaterialsByName(String name) {

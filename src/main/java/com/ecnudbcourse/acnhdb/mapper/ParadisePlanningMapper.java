@@ -21,4 +21,16 @@ public interface ParadisePlanningMapper extends BaseMapper<ParadisePlanning> {
     @Delete("DELETE FROM paradise_planning WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
 
+
+    @Select("SELECT * FROM paradise_planning WHERE Request LIKE CONCAT('%', #{request}, '%')")
+    List<ParadisePlanning> findByRequest(@Param("request") String request);
+
+    @Select("SELECT * FROM paradise_planning WHERE Thought_Bubble LIKE CONCAT('%', #{thoughtBubble}, '%')")
+    List<ParadisePlanning> findByThoughtBubble(@Param("thoughtBubble") String thoughtBubble);
+
+    @Select("SELECT * FROM paradise_planning WHERE Song LIKE CONCAT('%', #{song}, '%')")
+    List<ParadisePlanning> findBySong(@Param("song") String song);
+
+    @Select("SELECT * FROM paradise_planning WHERE Furniture_Name_List LIKE CONCAT('%', #{furnitureNameList}, '%')")
+    List<ParadisePlanning> findByFurnitureNameList(@Param("furnitureNameList") String furnitureNameList);
 }

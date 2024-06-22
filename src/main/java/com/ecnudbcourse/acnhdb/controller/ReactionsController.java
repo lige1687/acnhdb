@@ -23,4 +23,14 @@ public class ReactionsController {
     @GetMapping("/findByName")
     public List<Reactions> findByName(@RequestParam String name) { return reactionsService.findByName(name); }
 
+
+    @GetMapping("/searchSource")
+    public List<Reactions> searchReactionsBySource(@RequestParam(required = false) String source) {
+        return reactionsService.searchReactionsBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Reactions> searchReactionsBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return reactionsService.searchReactionsBySourceNotes(sourceNotes);
+    }
 }

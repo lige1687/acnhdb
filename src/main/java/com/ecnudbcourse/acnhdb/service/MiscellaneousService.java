@@ -40,6 +40,22 @@ public class MiscellaneousService {
         return miscellaneousMapper.searchByKitCostRangeAndSort(min, max, sort);
     }
 
+    public List<Miscellaneous> searchMiscellaneousByVariation(String variation) {
+        return miscellaneousMapper.findByVariation(variation);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByBodyTitle(String bodyTitle) {
+        return miscellaneousMapper.findByBodyTitle(bodyTitle);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByPattern(String pattern) {
+        return miscellaneousMapper.findByPattern(pattern);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByPatternTitle(String patternTitle) {
+        return miscellaneousMapper.findByPatternTitle(patternTitle);
+    }
+
     public List<Miscellaneous> searchMiscellaneousByDiy(String diy) {
         return miscellaneousMapper.findByDiy(diy);
     }
@@ -52,12 +68,64 @@ public class MiscellaneousService {
         return miscellaneousMapper.findByPatternCustomize(patternCustomize);
     }
 
+    public List<Miscellaneous> searchMiscellaneousByColor1(String color1) {
+        return miscellaneousMapper.findByColor1(color1);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByColor2(String color2) {
+        return miscellaneousMapper.findByColor2(color2);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousBySize(String size) {
+        return miscellaneousMapper.findBySize(size);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousBySource(String source) {
+        return miscellaneousMapper.findBySource(source);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousBySourceNotes(String sourceNotes) {
+        return miscellaneousMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByHhaConcept1(String hhaConcept1) {
+        return miscellaneousMapper.findByHhaConcept1(hhaConcept1);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByHhaConcept2(String hhaConcept2) {
+        return miscellaneousMapper.findByHhaConcept2(hhaConcept2);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByHhaSeries(String hhaSeries) {
+        return miscellaneousMapper.findByHhaSeries(hhaSeries);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByHhaSet(String hhaSet) {
+        return miscellaneousMapper.findByHhaSet(hhaSet);
+    }
+
     public List<Miscellaneous> searchMiscellaneousByInteract(String interact) {
         return miscellaneousMapper.findByInteract(interact);
     }
 
+    public List<Miscellaneous> searchMiscellaneousByTag(String tag) {
+        return miscellaneousMapper.findByTag(tag);
+    }
+
     public List<Miscellaneous> searchMiscellaneousByOutdoor(String outdoor) {
         return miscellaneousMapper.findByOutdoor(outdoor);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousBySpeakerType(String speakerType) {
+        return miscellaneousMapper.findBySpeakerType(speakerType);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByLightingType(String lightingType) {
+        return miscellaneousMapper.findByLightingType(lightingType);
+    }
+
+    public List<Miscellaneous> searchMiscellaneousByCatalog(String catalog) {
+        return miscellaneousMapper.findByCatalog(catalog);
     }
 
     public List<MiscellaneousMaterials> getMiscellaneousMaterialsByName(String name) {

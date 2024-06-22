@@ -36,4 +36,36 @@ public class ArtService {
     public List<Art> searchArtByGenuine(String genuine) {
         return artMapper.findByGenuine(genuine);
     }
+
+    public List<Art> searchArtByCategory(String category) {
+        return artMapper.findByCategory(category);
+    }
+
+    public List<Art> searchArtBySize(String size) {
+        return artMapper.findBySize(size);
+    }
+
+    public List<Art> searchArtByRealArtworkTitle(String realArtworkTitle) {
+        return artMapper.findByRealArtworkTitle(realArtworkTitle);
+    }
+
+    public List<Art> searchArtByArtist(String artist) {
+        return artMapper.findByArtist(artist);
+    }
+
+    public List<Art> searchArtByMuseumDescription(String museumDescription) {
+        return artMapper.findByMuseumDescription(museumDescription);
+    }
+
+    public List<Art> searchArtByHhaConcept1(String hhaConcept1) {
+        return artMapper.findByHhaConcept1(hhaConcept1);
+    }
+
+    public List<Art> searchArtByHhaConcept2(String hhaConcept2) {
+        return artMapper.findByHhaConcept2(hhaConcept2);
+    }
+
+    public List<Art> searchArtByTag(String tag) {
+        return artMapper.findByTag(tag);
+    }
 }

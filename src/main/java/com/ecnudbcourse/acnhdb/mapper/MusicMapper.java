@@ -43,4 +43,22 @@ public interface MusicMapper extends BaseMapper<Music> {
             "</if>" +
             "</script>")
     List<Music> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("SELECT * FROM music WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Music> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM music WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Music> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM music WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<Music> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM music WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Music> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM music WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Music> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM music WHERE Catalog = #{catalog}")
+    List<Music> findByCatalog(@Param("catalog") String catalog);
 }

@@ -56,11 +56,59 @@ public interface WallpaperMapper extends BaseMapper<Wallpaper> {
             "</script>")
     List<Wallpaper> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM wallpaper WHERE diy = #{diy}")
+    @Select("SELECT * FROM wallpaper WHERE VFX LIKE CONCAT('%', #{vfx}, '%')")
+    List<Wallpaper> findByVfx(@Param("vfx") String vfx);
+
+    @Select("SELECT * FROM wallpaper WHERE VFX_Type LIKE CONCAT('%', #{vfxType}, '%')")
+    List<Wallpaper> findByVfxType(@Param("vfxType") String vfxType);
+
+    @Select("SELECT * FROM wallpaper WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Wallpaper> findByDiy(@Param("diy") String diy);
 
-    @Select("SELECT * FROM wallpaper WHERE vfx = #{vfx}")
-    List<Wallpaper> findByVfx(@Param("vfx") String vfx);
+    @Select("SELECT * FROM wallpaper WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Wallpaper> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM wallpaper WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Wallpaper> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM wallpaper WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Wallpaper> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM wallpaper WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Wallpaper> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM wallpaper WHERE Catalog = #{catalog}")
+    List<Wallpaper> findByCatalog(@Param("catalog") String catalog);
+
+    @Select("SELECT * FROM wallpaper WHERE Window_Type LIKE CONCAT('%', #{windowType}, '%')")
+    List<Wallpaper> findByWindowType(@Param("windowType") String windowType);
+
+    @Select("SELECT * FROM wallpaper WHERE Window_Color LIKE CONCAT('%', #{windowColor}, '%')")
+    List<Wallpaper> findByWindowColor(@Param("windowColor") String windowColor);
+
+    @Select("SELECT * FROM wallpaper WHERE Pane_Type LIKE CONCAT('%', #{paneType}, '%')")
+    List<Wallpaper> findByPaneType(@Param("paneType") String paneType);
+
+    @Select("SELECT * FROM wallpaper WHERE Curtain_Type LIKE CONCAT('%', #{curtainType}, '%')")
+    List<Wallpaper> findByCurtainType(@Param("curtainType") String curtainType);
+
+    @Select("SELECT * FROM wallpaper WHERE Curtain_Color LIKE CONCAT('%', #{curtainColor}, '%')")
+    List<Wallpaper> findByCurtainColor(@Param("curtainColor") String curtainColor);
+
+    @Select("SELECT * FROM wallpaper WHERE Ceiling_Type LIKE CONCAT('%', #{ceilingType}, '%')")
+    List<Wallpaper> findByCeilingType(@Param("ceilingType") String ceilingType);
+
+    @Select("SELECT * FROM wallpaper WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<Wallpaper> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM wallpaper WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<Wallpaper> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM wallpaper WHERE HHA_Series LIKE CONCAT('%', #{hhaSeries}, '%')")
+    List<Wallpaper> findByHhaSeries(@Param("hhaSeries") String hhaSeries);
+
+    @Select("SELECT * FROM wallpaper WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Wallpaper> findByTag(@Param("tag") String tag);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

@@ -45,8 +45,44 @@ public interface DressUpMapper extends BaseMapper<DressUp> {
             "</script>")
     List<DressUp> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM dress_up WHERE diy = #{diy}")
+    @Select("SELECT * FROM dress_up WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<DressUp> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM dress_up WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<DressUp> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM dress_up WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<DressUp> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM dress_up WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<DressUp> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM dress_up WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<DressUp> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM dress_up WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<DressUp> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM dress_up WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<DressUp> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM dress_up WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<DressUp> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM dress_up WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<DressUp> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM dress_up WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<DressUp> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM dress_up WHERE Catalog = #{catalog}")
+    List<DressUp> findByCatalog(@Param("catalog") String catalog);
+
+    @Select("SELECT * FROM dress_up WHERE Primary_Shape LIKE CONCAT('%', #{primaryShape}, '%')")
+    List<DressUp> findByPrimaryShape(@Param("primaryShape") String primaryShape);
+
+    @Select("SELECT * FROM dress_up WHERE Secondary_Shape LIKE CONCAT('%', #{secondaryShape}, '%')")
+    List<DressUp> findBySecondaryShape(@Param("secondaryShape") String secondaryShape);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

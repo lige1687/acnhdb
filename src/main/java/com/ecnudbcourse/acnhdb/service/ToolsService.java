@@ -44,8 +44,40 @@ public class ToolsService {
         return toolsMapper.searchByKitCostRangeAndSort(min, max, sort);
     }
 
+    public List<Tools> searchToolsByVariation(String variation) {
+        return toolsMapper.findByVariation(variation);
+    }
+
+    public List<Tools> searchToolsByBodyTitle(String bodyTitle) {
+        return toolsMapper.findByBodyTitle(bodyTitle);
+    }
+
     public List<Tools> searchToolsByDiy(String diy) {
         return toolsMapper.findByDiy(diy);
+    }
+
+    public List<Tools> searchToolsByCustomize(String customize) {
+        return toolsMapper.findByCustomize(customize);
+    }
+
+    public List<Tools> searchToolsByUses(String uses) {
+        return toolsMapper.findByUses(uses);
+    }
+
+    public List<Tools> searchToolsByStackSize(String stackSize) {
+        return toolsMapper.findByStackSize(stackSize);
+    }
+
+    public List<Tools> searchToolsByToolSet(String toolSet) {
+        return toolsMapper.findByToolSet(toolSet);
+    }
+
+    public List<Tools> searchToolsBySource(String source) {
+        return toolsMapper.findBySource(source);
+    }
+
+    public List<Tools> searchToolsBySourceNotes(String sourceNotes) {
+        return toolsMapper.findBySourceNotes(sourceNotes);
     }
 
     public List<ToolsMaterials> getToolsMaterialsByName(String name) {

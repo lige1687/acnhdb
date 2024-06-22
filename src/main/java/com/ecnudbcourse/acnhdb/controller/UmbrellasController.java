@@ -69,6 +69,31 @@ public class UmbrellasController {
         return umbrellasService.searchUmbrellasByDiy(diy);
     }
 
+    @GetMapping("/searchColor1")
+    public List<Umbrellas> searchUmbrellasByColor1(@RequestParam(required = false) String color1) {
+        return umbrellasService.searchUmbrellasByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Umbrellas> searchUmbrellasByColor2(@RequestParam(required = false) String color2) {
+        return umbrellasService.searchUmbrellasByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Umbrellas> searchUmbrellasBySource(@RequestParam(required = false) String source) {
+        return umbrellasService.searchUmbrellasBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Umbrellas> searchUmbrellasBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return umbrellasService.searchUmbrellasBySourceNotes(sourceNotes);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Umbrellas> searchUmbrellasByCatalog(@RequestParam(required = false) String catalog) {
+        return umbrellasService.searchUmbrellasByCatalog(catalog);
+    }
+
     @GetMapping("/materials")
     public List<UmbrellasMaterials> getUmbrellasMaterialsByName(@RequestParam String name) {
         return umbrellasService.getUmbrellasMaterialsByName(name);

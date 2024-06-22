@@ -77,4 +77,8 @@ public class FishService {
         return hour;
     }
 
+    public List<Fish> searchFishBySellRangeAndSort(Integer min, Integer max, String sort) {
+        return fishMapper.searchBySellRangeAndSort(min, max, sort);
+    }
+
 }

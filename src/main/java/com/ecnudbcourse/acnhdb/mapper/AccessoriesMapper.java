@@ -56,8 +56,44 @@ public interface AccessoriesMapper extends BaseMapper<Accessories> {
             "</script>")
     List<Accessories> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM accessories WHERE diy = #{diy}")
+    @Select("SELECT * FROM accessories WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Accessories> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM accessories WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Accessories> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM accessories WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Accessories> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM accessories WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Accessories> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM accessories WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Accessories> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM accessories WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Accessories> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM accessories WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Accessories> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM accessories WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Accessories> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM accessories WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Accessories> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM accessories WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Accessories> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM accessories WHERE Type LIKE CONCAT('%', #{type}, '%')")
+    List<Accessories> findByType(@Param("type") String type);
+
+    @Select("SELECT * FROM accessories WHERE Villager_Equippable LIKE CONCAT('%', #{villagerEquippable}, '%')")
+    List<Accessories> findByVillagerEquippable(@Param("villagerEquippable") String villagerEquippable);
+
+    @Select("SELECT * FROM accessories WHERE Catalog = #{catalog}")
+    List<Accessories> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

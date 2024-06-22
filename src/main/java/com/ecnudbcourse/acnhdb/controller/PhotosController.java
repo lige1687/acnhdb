@@ -23,4 +23,19 @@ public class PhotosController {
     @GetMapping("/findByName")
     public List<Photos> findByName(@RequestParam String name) { return photosService.findByName(name); }
 
+
+    @GetMapping("/searchVariation")
+    public List<Photos> searchPhotosByVariation(@RequestParam(required = false) String variation) {
+        return photosService.searchPhotosByVariation(variation);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Photos> searchPhotosByColor1(@RequestParam(required = false) String color1) {
+        return photosService.searchPhotosByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Photos> searchPhotosByColor2(@RequestParam(required = false) String color2) {
+        return photosService.searchPhotosByColor2(color2);
+    }
 }

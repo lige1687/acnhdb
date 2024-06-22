@@ -77,9 +77,49 @@ public class ToolsController {
         return toolsService.searchToolsByKitCostRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Tools> searchToolsByVariation(@RequestParam(required = false) String variation) {
+        return toolsService.searchToolsByVariation(variation);
+    }
+
+    @GetMapping("/searchBodyTitle")
+    public List<Tools> searchToolsByBodyTitle(@RequestParam(required = false) String bodyTitle) {
+        return toolsService.searchToolsByBodyTitle(bodyTitle);
+    }
+
     @GetMapping("/searchDiy")
     public List<Tools> searchToolsByDiy(@RequestParam(required = false) String diy) {
         return toolsService.searchToolsByDiy(diy);
+    }
+
+    @GetMapping("/searchCustomize")
+    public List<Tools> searchToolsByCustomize(@RequestParam(required = false) String customize) {
+        return toolsService.searchToolsByCustomize(customize);
+    }
+
+    @GetMapping("/searchUses")
+    public List<Tools> searchToolsByUses(@RequestParam(required = false) String uses) {
+        return toolsService.searchToolsByUses(uses);
+    }
+
+    @GetMapping("/searchStackSize")
+    public List<Tools> searchToolsByStackSize(@RequestParam(required = false) String stackSize) {
+        return toolsService.searchToolsByStackSize(stackSize);
+    }
+
+    @GetMapping("/searchToolSet")
+    public List<Tools> searchToolsByToolSet(@RequestParam(required = false) String toolSet) {
+        return toolsService.searchToolsByToolSet(toolSet);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Tools> searchToolsBySource(@RequestParam(required = false) String source) {
+        return toolsService.searchToolsBySource(source);
+    }
+
+    @GetMapping("/searchSourceNotes")
+    public List<Tools> searchToolsBySourceNotes(@RequestParam(required = false) String sourceNotes) {
+        return toolsService.searchToolsBySourceNotes(sourceNotes);
     }
 
     @GetMapping("/materials")

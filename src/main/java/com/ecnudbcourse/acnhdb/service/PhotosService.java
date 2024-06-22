@@ -24,4 +24,16 @@ public class PhotosService {
 
     public Photos getById(Long id) { return photosMapper.selectById(id); }
 
+
+    public List<Photos> searchPhotosByVariation(String variation) {
+        return photosMapper.findByVariation(variation);
+    }
+
+    public List<Photos> searchPhotosByColor1(String color1) {
+        return photosMapper.findByColor1(color1);
+    }
+
+    public List<Photos> searchPhotosByColor2(String color2) {
+        return photosMapper.findByColor2(color2);
+    }
 }

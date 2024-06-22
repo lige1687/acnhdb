@@ -44,6 +44,22 @@ public class HousewaresService {
         return housewaresMapper.searchByKitCostRangeAndSort(min, max, sort);
     }
 
+    public List<Housewares> searchHousewaresByVariation(String variation) {
+        return housewaresMapper.findByVariation(variation);
+    }
+
+    public List<Housewares> searchHousewaresByBodyTitle(String bodyTitle) {
+        return housewaresMapper.findByBodyTitle(bodyTitle);
+    }
+
+    public List<Housewares> searchHousewaresByPattern(String pattern) {
+        return housewaresMapper.findByPattern(pattern);
+    }
+
+    public List<Housewares> searchHousewaresByPatternTitle(String patternTitle) {
+        return housewaresMapper.findByPatternTitle(patternTitle);
+    }
+
     public List<Housewares> searchHousewaresByDiy(String diy) {
         return housewaresMapper.findByDiy(diy);
     }
@@ -56,12 +72,60 @@ public class HousewaresService {
         return housewaresMapper.findByPatternCustomize(patternCustomize);
     }
 
+    public List<Housewares> searchHousewaresByColor1(String color1) {
+        return housewaresMapper.findByColor1(color1);
+    }
+
+    public List<Housewares> searchHousewaresByColor2(String color2) {
+        return housewaresMapper.findByColor2(color2);
+    }
+
+    public List<Housewares> searchHousewaresBySize(String size) {
+        return housewaresMapper.findBySize(size);
+    }
+
     public List<Housewares> searchHousewaresByInteract(String interact) {
         return housewaresMapper.findByInteract(interact);
     }
 
+    public List<Housewares> searchHousewaresByTag(String tag) {
+        return housewaresMapper.findByTag(tag);
+    }
+
     public List<Housewares> searchHousewaresByOutdoor(String outdoor) {
         return housewaresMapper.findByOutdoor(outdoor);
+    }
+
+    public List<Housewares> searchHousewaresBySource(String source) {
+        return housewaresMapper.findBySource(source);
+    }
+
+    public List<Housewares> searchHousewaresBySourceNotes(String sourceNotes) {
+        return housewaresMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Housewares> searchHousewaresByHhaConcept1(String hhaConcept1) {
+        return housewaresMapper.findByHhaConcept1(hhaConcept1);
+    }
+
+    public List<Housewares> searchHousewaresByHhaConcept2(String hhaConcept2) {
+        return housewaresMapper.findByHhaConcept2(hhaConcept2);
+    }
+
+    public List<Housewares> searchHousewaresByHhaSeries(String hhaSeries) {
+        return housewaresMapper.findByHhaSeries(hhaSeries);
+    }
+
+    public List<Housewares> searchHousewaresByHhaSet(String hhaSet) {
+        return housewaresMapper.findByHhaSet(hhaSet);
+    }
+
+    public List<Housewares> searchHousewaresBySpeakerType(String speakerType) {
+        return housewaresMapper.findBySpeakerType(speakerType);
+    }
+
+    public List<Housewares> searchHousewaresByLightingType(String lightingType) {
+        return housewaresMapper.findByLightingType(lightingType);
     }
 
     public List<HousewaresMaterials> getHousewaresMaterialsByName(String name) {

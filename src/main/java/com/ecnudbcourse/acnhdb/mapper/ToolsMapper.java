@@ -67,8 +67,32 @@ public interface ToolsMapper extends BaseMapper<Tools> {
             "</script>")
     List<Tools> searchByKitCostRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM tools WHERE diy = #{diy}")
+    @Select("SELECT * FROM tools WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Tools> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM tools WHERE Body_Title LIKE CONCAT('%', #{bodyTitle}, '%')")
+    List<Tools> findByBodyTitle(@Param("bodyTitle") String bodyTitle);
+
+    @Select("SELECT * FROM tools WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Tools> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM tools WHERE Customize LIKE CONCAT('%', #{customize}, '%')")
+    List<Tools> findByCustomize(@Param("customize") String customize);
+
+    @Select("SELECT * FROM tools WHERE Uses LIKE CONCAT('%', #{uses}, '%')")
+    List<Tools> findByUses(@Param("uses") String uses);
+
+    @Select("SELECT * FROM tools WHERE Stack_Size LIKE CONCAT('%', #{stackSize}, '%')")
+    List<Tools> findByStackSize(@Param("stackSize") String stackSize);
+
+    @Select("SELECT * FROM tools WHERE Tool_Set LIKE CONCAT('%', #{toolSet}, '%')")
+    List<Tools> findByToolSet(@Param("toolSet") String toolSet);
+
+    @Select("SELECT * FROM tools WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Tools> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM tools WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Tools> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

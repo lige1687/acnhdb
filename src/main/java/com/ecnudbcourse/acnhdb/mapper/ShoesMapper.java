@@ -56,8 +56,38 @@ public interface ShoesMapper extends BaseMapper<Shoes> {
             "</script>")
     List<Shoes> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM shoes WHERE diy = #{diy}")
+    @Select("SELECT * FROM shoes WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Shoes> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM shoes WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<Shoes> findByDiy(@Param("diy") String diy);
+
+    @Select("SELECT * FROM shoes WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Shoes> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM shoes WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Shoes> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM shoes WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Shoes> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM shoes WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Shoes> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM shoes WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Shoes> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM shoes WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Shoes> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM shoes WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Shoes> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM shoes WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Shoes> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM shoes WHERE Catalog = #{catalog}")
+    List<Shoes> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

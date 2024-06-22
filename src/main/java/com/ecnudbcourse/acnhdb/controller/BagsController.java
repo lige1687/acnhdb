@@ -64,9 +64,44 @@ public class BagsController {
         return bagsService.searchBagsByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    @GetMapping("/searchVariation")
+    public List<Bags> searchBagsByVariation(@RequestParam(required = false) String variation) {
+        return bagsService.searchBagsByVariation(variation);
+    }
+
     @GetMapping("/searchDiy")
     public List<Bags> searchBagsByDiy(@RequestParam(required = false) String diy) {
         return bagsService.searchBagsByDiy(diy);
+    }
+
+    @GetMapping("/searchColor1")
+    public List<Bags> searchBagsByColor1(@RequestParam(required = false) String color1) {
+        return bagsService.searchBagsByColor1(color1);
+    }
+
+    @GetMapping("/searchColor2")
+    public List<Bags> searchBagsByColor2(@RequestParam(required = false) String color2) {
+        return bagsService.searchBagsByColor2(color2);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Bags> searchBagsBySource(@RequestParam(required = false) String source) {
+        return bagsService.searchBagsBySource(source);
+    }
+
+    @GetMapping("/searchStyle")
+    public List<Bags> searchBagsByStyle(@RequestParam(required = false) String style) {
+        return bagsService.searchBagsByStyle(style);
+    }
+
+    @GetMapping("/searchLabelThemes")
+    public List<Bags> searchBagsByLabelThemes(@RequestParam(required = false) String labelThemes) {
+        return bagsService.searchBagsByLabelThemes(labelThemes);
+    }
+
+    @GetMapping("/searchCatalog")
+    public List<Bags> searchBagsByCatalog(@RequestParam(required = false) String catalog) {
+        return bagsService.searchBagsByCatalog(catalog);
     }
 
     @GetMapping("/materials")

@@ -54,4 +54,34 @@ public interface SocksMapper extends BaseMapper<Socks> {
             "</if>" +
             "</script>")
     List<Socks> searchByMilesPriceRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
+
+    @Select("SELECT * FROM socks WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<Socks> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM socks WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<Socks> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM socks WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<Socks> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM socks WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<Socks> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM socks WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<Socks> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM socks WHERE Seasonal_Availability LIKE CONCAT('%', #{seasonalAvailability}, '%')")
+    List<Socks> findBySeasonalAvailability(@Param("seasonalAvailability") String seasonalAvailability);
+
+    @Select("SELECT * FROM socks WHERE Mannequin_Piece LIKE CONCAT('%', #{mannequinPiece}, '%')")
+    List<Socks> findByMannequinPiece(@Param("mannequinPiece") String mannequinPiece);
+
+    @Select("SELECT * FROM socks WHERE Style LIKE CONCAT('%', #{style}, '%')")
+    List<Socks> findByStyle(@Param("style") String style);
+
+    @Select("SELECT * FROM socks WHERE Label_Themes LIKE CONCAT('%', #{labelThemes}, '%')")
+    List<Socks> findByLabelThemes(@Param("labelThemes") String labelThemes);
+
+    @Select("SELECT * FROM socks WHERE Catalog = #{catalog}")
+    List<Socks> findByCatalog(@Param("catalog") String catalog);
 }

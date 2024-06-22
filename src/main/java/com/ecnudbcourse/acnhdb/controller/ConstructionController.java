@@ -36,4 +36,14 @@ public class ConstructionController {
 
         return constructionService.searchConstructionByBuyRangeAndSort(min, max, sort);
     }
+
+    @GetMapping("/searchCategory")
+    public List<Construction> searchConstructionByCategory(@RequestParam(required = false) String category) {
+        return constructionService.searchConstructionByCategory(category);
+    }
+
+    @GetMapping("/searchSource")
+    public List<Construction> searchConstructionBySource(@RequestParam(required = false) String source) {
+        return constructionService.searchConstructionBySource(source);
+    }
 }

@@ -56,17 +56,68 @@ public interface WallMountedMapper extends BaseMapper<WallMounted> {
             "</script>")
     List<WallMounted> searchByKitCostRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM wall_mounted WHERE diy = #{diy}")
+    @Select("SELECT * FROM wall_mounted WHERE Variation LIKE CONCAT('%', #{variation}, '%')")
+    List<WallMounted> findByVariation(@Param("variation") String variation);
+
+    @Select("SELECT * FROM wall_mounted WHERE Body_Title LIKE CONCAT('%', #{bodyTitle}, '%')")
+    List<WallMounted> findByBodyTitle(@Param("bodyTitle") String bodyTitle);
+
+    @Select("SELECT * FROM wall_mounted WHERE Pattern LIKE CONCAT('%', #{pattern}, '%')")
+    List<WallMounted> findByPattern(@Param("pattern") String pattern);
+
+    @Select("SELECT * FROM wall_mounted WHERE Pattern_Title LIKE CONCAT('%', #{patternTitle}, '%')")
+    List<WallMounted> findByPatternTitle(@Param("patternTitle") String patternTitle);
+
+    @Select("SELECT * FROM wall_mounted WHERE DIY LIKE CONCAT('%', #{diy}, '%')")
     List<WallMounted> findByDiy(@Param("diy") String diy);
 
-    @Select("SELECT * FROM wall_mounted WHERE body_customize = #{bodyCustomize}")
+    @Select("SELECT * FROM wall_mounted WHERE Body_Customize LIKE CONCAT('%', #{bodyCustomize}, '%')")
     List<WallMounted> findByBodyCustomize(@Param("bodyCustomize") String bodyCustomize);
 
-    @Select("SELECT * FROM wall_mounted WHERE pattern_customize = #{patternCustomize}")
+    @Select("SELECT * FROM wall_mounted WHERE Pattern_Customize LIKE CONCAT('%', #{patternCustomize}, '%')")
     List<WallMounted> findByPatternCustomize(@Param("patternCustomize") String patternCustomize);
 
-    @Select("SELECT * FROM wall_mounted WHERE interact = #{interact}")
+    @Select("SELECT * FROM wall_mounted WHERE Color1 LIKE CONCAT('%', #{color1}, '%')")
+    List<WallMounted> findByColor1(@Param("color1") String color1);
+
+    @Select("SELECT * FROM wall_mounted WHERE Color2 LIKE CONCAT('%', #{color2}, '%')")
+    List<WallMounted> findByColor2(@Param("color2") String color2);
+
+    @Select("SELECT * FROM wall_mounted WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<WallMounted> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM wall_mounted WHERE Source LIKE CONCAT('%', #{source}, '%')")
+    List<WallMounted> findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM wall_mounted WHERE Source_Notes LIKE CONCAT('%', #{sourceNotes}, '%')")
+    List<WallMounted> findBySourceNotes(@Param("sourceNotes") String sourceNotes);
+
+    @Select("SELECT * FROM wall_mounted WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<WallMounted> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM wall_mounted WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<WallMounted> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM wall_mounted WHERE HHA_Series LIKE CONCAT('%', #{hhaSeries}, '%')")
+    List<WallMounted> findByHhaSeries(@Param("hhaSeries") String hhaSeries);
+
+    @Select("SELECT * FROM wall_mounted WHERE HHA_Set LIKE CONCAT('%', #{hhaSet}, '%')")
+    List<WallMounted> findByHhaSet(@Param("hhaSet") String hhaSet);
+
+    @Select("SELECT * FROM wall_mounted WHERE Interact LIKE CONCAT('%', #{interact}, '%')")
     List<WallMounted> findByInteract(@Param("interact") String interact);
+
+    @Select("SELECT * FROM wall_mounted WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<WallMounted> findByTag(@Param("tag") String tag);
+
+    @Select("SELECT * FROM wall_mounted WHERE Lighting_Type LIKE CONCAT('%', #{lightingType}, '%')")
+    List<WallMounted> findByLightingType(@Param("lightingType") String lightingType);
+
+    @Select("SELECT * FROM wall_mounted WHERE Door_Deco LIKE CONCAT('%', #{doorDeco}, '%')")
+    List<WallMounted> findByDoorDeco(@Param("doorDeco") String doorDeco);
+
+    @Select("SELECT * FROM wall_mounted WHERE Catalog = #{catalog}")
+    List<WallMounted> findByCatalog(@Param("catalog") String catalog);
 
     @Select("SELECT" +
             "   COALESCE(r.name, '') AS name," +

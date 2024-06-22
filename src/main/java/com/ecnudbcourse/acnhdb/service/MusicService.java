@@ -32,4 +32,28 @@ public class MusicService {
     public List<Music> searchMusicBySellRangeAndSort(Integer min, Integer max, String sort) {
         return musicMapper.searchBySellRangeAndSort(min, max, sort);
     }
+
+    public List<Music> searchMusicByColor1(String color1) {
+        return musicMapper.findByColor1(color1);
+    }
+
+    public List<Music> searchMusicByColor2(String color2) {
+        return musicMapper.findByColor2(color2);
+    }
+
+    public List<Music> searchMusicBySize(String size) {
+        return musicMapper.findBySize(size);
+    }
+
+    public List<Music> searchMusicBySource(String source) {
+        return musicMapper.findBySource(source);
+    }
+
+    public List<Music> searchMusicBySourceNotes(String sourceNotes) {
+        return musicMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Music> searchMusicByCatalog(String catalog) {
+        return musicMapper.findByCatalog(catalog);
+    }
 }

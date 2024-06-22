@@ -44,6 +44,46 @@ public class RugsService {
         return rugsMapper.findByDiy(diy);
     }
 
+    public List<Rugs> searchRugsByColor1(String color1) {
+        return rugsMapper.findByColor1(color1);
+    }
+
+    public List<Rugs> searchRugsByColor2(String color2) {
+        return rugsMapper.findByColor2(color2);
+    }
+
+    public List<Rugs> searchRugsBySize(String size) {
+        return rugsMapper.findBySize(size);
+    }
+
+    public List<Rugs> searchRugsBySource(String source) {
+        return rugsMapper.findBySource(source);
+    }
+
+    public List<Rugs> searchRugsBySourceNotes(String sourceNotes) {
+        return rugsMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Rugs> searchRugsByHhaConcept1(String hhaConcept1) {
+        return rugsMapper.findByHhaConcept1(hhaConcept1);
+    }
+
+    public List<Rugs> searchRugsByHhaConcept2(String hhaConcept2) {
+        return rugsMapper.findByHhaConcept2(hhaConcept2);
+    }
+
+    public List<Rugs> searchRugsByHhaSeries(String hhaSeries) {
+        return rugsMapper.findByHhaSeries(hhaSeries);
+    }
+
+    public List<Rugs> searchRugsByTag(String tag) {
+        return rugsMapper.findByTag(tag);
+    }
+
+    public List<Rugs> searchRugsByCatalog(String catalog) {
+        return rugsMapper.findByCatalog(catalog);
+    }
+
     public List<RugsMaterials> getRugsMaterialsByName(String name) {
         List<RugsMaterials> materials = rugsMapper.selectRugsMaterialsByName(name);
         Set<RugsMaterials> uniqueMaterials = materials.stream().collect(Collectors.toSet());

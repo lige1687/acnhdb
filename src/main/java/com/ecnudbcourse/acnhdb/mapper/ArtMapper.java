@@ -44,6 +44,30 @@ public interface ArtMapper extends BaseMapper<Art> {
             "</script>")
     List<Art> searchBySellRangeAndSort(@Param("min") Integer min, @Param("max") Integer max, @Param("sort") String sort);
 
-    @Select("SELECT * FROM art WHERE genuine = #{genuine}")
+    @Select("SELECT * FROM art WHERE Genuine LIKE CONCAT('%', #{genuine}, '%')")
     List<Art> findByGenuine(@Param("genuine") String genuine);
+
+    @Select("SELECT * FROM art WHERE Category LIKE CONCAT('%', #{category}, '%')")
+    List<Art> findByCategory(@Param("category") String category);
+
+    @Select("SELECT * FROM art WHERE Size LIKE CONCAT('%', #{size}, '%')")
+    List<Art> findBySize(@Param("size") String size);
+
+    @Select("SELECT * FROM art WHERE Real_Artwork_Title LIKE CONCAT('%', #{realArtworkTitle}, '%')")
+    List<Art> findByRealArtworkTitle(@Param("realArtworkTitle") String realArtworkTitle);
+
+    @Select("SELECT * FROM art WHERE Artist LIKE CONCAT('%', #{artist}, '%')")
+    List<Art> findByArtist(@Param("artist") String artist);
+
+    @Select("SELECT * FROM art WHERE Museum_Description LIKE CONCAT('%', #{museumDescription}, '%')")
+    List<Art> findByMuseumDescription(@Param("museumDescription") String museumDescription);
+
+    @Select("SELECT * FROM art WHERE HHA_Concept1 LIKE CONCAT('%', #{hhaConcept1}, '%')")
+    List<Art> findByHhaConcept1(@Param("hhaConcept1") String hhaConcept1);
+
+    @Select("SELECT * FROM art WHERE HHA_Concept2 LIKE CONCAT('%', #{hhaConcept2}, '%')")
+    List<Art> findByHhaConcept2(@Param("hhaConcept2") String hhaConcept2);
+
+    @Select("SELECT * FROM art WHERE Tag LIKE CONCAT('%', #{tag}, '%')")
+    List<Art> findByTag(@Param("tag") String tag);
 }

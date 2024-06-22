@@ -40,8 +40,56 @@ public class AccessoriesService {
         return accessoriesMapper.searchByMilesPriceRangeAndSort(min, max, sort);
     }
 
+    public List<Accessories> searchAccessoriesByVariation(String variation) {
+        return accessoriesMapper.findByVariation(variation);
+    }
+
     public List<Accessories> searchAccessoriesByDiy(String diy) {
         return accessoriesMapper.findByDiy(diy);
+    }
+
+    public List<Accessories> searchAccessoriesByColor1(String color1) {
+        return accessoriesMapper.findByColor1(color1);
+    }
+
+    public List<Accessories> searchAccessoriesByColor2(String color2) {
+        return accessoriesMapper.findByColor2(color2);
+    }
+
+    public List<Accessories> searchAccessoriesBySource(String source) {
+        return accessoriesMapper.findBySource(source);
+    }
+
+    public List<Accessories> searchAccessoriesBySourceNotes(String sourceNotes) {
+        return accessoriesMapper.findBySourceNotes(sourceNotes);
+    }
+
+    public List<Accessories> searchAccessoriesBySeasonalAvailability(String seasonalAvailability) {
+        return accessoriesMapper.findBySeasonalAvailability(seasonalAvailability);
+    }
+
+    public List<Accessories> searchAccessoriesByMannequinPiece(String mannequinPiece) {
+        return accessoriesMapper.findByMannequinPiece(mannequinPiece);
+    }
+
+    public List<Accessories> searchAccessoriesByStyle(String style) {
+        return accessoriesMapper.findByStyle(style);
+    }
+
+    public List<Accessories> searchAccessoriesByLabelThemes(String labelThemes) {
+        return accessoriesMapper.findByLabelThemes(labelThemes);
+    }
+
+    public List<Accessories> searchAccessoriesByType(String type) {
+        return accessoriesMapper.findByType(type);
+    }
+
+    public List<Accessories> searchAccessoriesByVillagerEquippable(String villagerEquippable) {
+        return accessoriesMapper.findByVillagerEquippable(villagerEquippable);
+    }
+
+    public List<Accessories> searchAccessoriesByCatalog(String catalog) {
+        return accessoriesMapper.findByCatalog(catalog);
     }
 
     public List<AccessoriesMaterials> getAccessoriesMaterialsByName(String name) {
